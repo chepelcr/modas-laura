@@ -205,7 +205,7 @@ test("Decorative motion runs only in view and focused content stays opaque", asy
       page.locator(".ring-one").evaluate((el) => el.getAnimations().length),
     )
     .toBe(1);
-  await page.locator(".process-card .button").focus();
+  await page.locator(".process-content a").focus();
   await expect(page.locator(".process-card")).toHaveCSS("opacity", "1");
   await page.locator("#contacto").evaluate((el) => el.scrollIntoView());
   await expect(page.locator(".process-card")).not.toHaveClass(/in-view/);
