@@ -556,7 +556,7 @@ summary:focus-visible {
   position: absolute;
   bottom: 54px;
   left: -25px;
-  transform: rotate(-6deg);
+  transform: rotate(6deg);
   background: var(--bg);
   padding: 15px 20px;
   font-family: var(--serif);
