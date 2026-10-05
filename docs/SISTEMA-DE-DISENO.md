@@ -27,3 +27,9 @@ El logo aprobado usa un bebé inspirado en la foto de infancia de la mamá de Jo
 LocaleProvider comparte traducciones y rutas españolas/inglesas entre componentes. ThemeProvider y los tokens semánticos definen temas claro y oscuro; el encabezado permite cambiar ambos, conservando página y preferencias. Las animaciones respetan movimiento reducido y detienen los elementos decorativos fuera de pantalla.
 
 La variante inversa usa lettering crema y trazos menta sobre transparencia, sin recuadro. La selección de logo depende del tema mediante CSS para evitar saltos durante la hidratación. CountryFlag es una primitiva SVG reutilizable; la etiqueta accesible del enlace indica el idioma de destino.
+
+## Cómo consultar · Disposición de la tarjeta
+
+La distribución sigue la referencia «Cómo funciona» de Sóköl: ancho máximo de 720 px, relleno de 32 px en escritorio y 20 px en móvil, controles laterales de 44 px e icono centrado en un área de 160 px. Descripción y acción comparten una fila en escritorio; se apilan en móvil. El progreso queda centrado al pie. Se conservan las primitivas, paleta y tipografía de Modas Laura. Los tamaños se compactan en pantallas de poca altura para mantener todos los pasos visibles.
+
+El sello de origen divide «Una historia / desde» y «Our story / since» en dos líneas para conservar margen dentro del círculo.

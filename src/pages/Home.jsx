@@ -51,7 +51,11 @@ export default function Home() {
               fetchPriority="high"
             />
             <div className="heritage-seal">
-              <span>{t("Una historia desde")}</span>
+              <span className="seal-heading">
+                {t("Una historia")}
+                <br />
+                {t("desde")}
+              </span>
               <strong>{t("1974")}</strong>
               <span>{t("Costa Rica")}</span>
             </div>

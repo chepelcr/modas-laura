@@ -1,4 +1,6 @@
 export const en = {
+  "Una historia": "Our story",
+  desde: "since",
   "Composición ilustrativa de una almohadita celeste con encaje, inspirada en nuestro archivo.":
     "Illustrative composition of a sky-blue lace pillow, inspired by our archive.",
   "Detalles que cuentan nuestra historia.": "Details that tell our story.",

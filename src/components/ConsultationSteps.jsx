@@ -91,6 +91,7 @@ export function ConsultationSteps() {
               <p>{t(step.description)}</p>
             </div>
             <Button
+              variant="text"
               href={href}
               {...(step.href.startsWith("https:")
                 ? { target: "_blank", rel: "noopener" }
