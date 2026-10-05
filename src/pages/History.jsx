@@ -131,7 +131,7 @@ export default function History() {
           )}
         </p>
         <div className="hero-actions">
-          <Button href="#coleccion" variant="primary">
+          <Button href={routeUrl("#coleccion")} variant="primary">
             {t("Conocé la colección ")}
             <Icon name="arrow" />
           </Button>

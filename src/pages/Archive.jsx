@@ -35,7 +35,7 @@ export default function Archive() {
           <br />
           <em>{t("Seguimos creando.")}</em>
         </Heading>
-        <Button href="#coleccion" variant="primary">
+        <Button href={routeUrl("#coleccion")} variant="primary">
           {t("Ver líneas actuales ")}
           <Icon name="arrow" />
         </Button>

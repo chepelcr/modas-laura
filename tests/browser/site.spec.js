@@ -300,3 +300,21 @@ test("Portrait label extends equally beyond the photo's left and bottom edges", 
     }
   }
 });
+
+test("Archive collection action opens the home collection in the selected language", async ({
+  page,
+}) => {
+  for (const [archive, home] of [
+    ["archivo/", "/"],
+    ["en/archive/", "/en/"],
+    ["historia/", "/"],
+    ["en/history/", "/en/"],
+  ]) {
+    await page.goto(archive);
+    const action = page.locator('.closing a.button[href$="#coleccion"]');
+    await expect(action).toHaveAttribute("href", `${home}#coleccion`);
+    await action.click();
+    await expect(page).toHaveURL(`http://127.0.0.1:4173${home}#coleccion`);
+    await expect(page.locator("#coleccion")).toBeInViewport();
+  }
+});
