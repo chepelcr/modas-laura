@@ -19,3 +19,11 @@ React + Vite, sin framework de estilos ni librería de animación adicional. CSS
 ## Extensiones
 
 Agregar un primitivo aquí antes de duplicarlo en una nueva sección. Usar colores semánticos, conservar contraste, foco, teclado y movimiento reducido. No agregar una biblioteca salvo una necesidad concreta. No colocar herramientas internas en la experiencia pública. Para nuevos idiomas, agregar metadata, entradas de compilación y sitemap, además de contenido.
+
+## Identidad familiar e idiomas
+
+El logo aprobado usa un bebé inspirado en la foto de infancia de la mamá de José Pablo. El PNG maestro se conserva en la propuesta visual v6; el sitio sirve una copia WebP optimizada, con proporción 3:1 y fondo transparente. Portada, vista para compartir y tarjeta descargable usan el mismo emblema. La foto de referencia queda fuera del repositorio público.
+
+LocaleProvider comparte traducciones y rutas españolas/inglesas entre componentes. ThemeProvider y los tokens semánticos definen temas claro y oscuro; el encabezado permite cambiar ambos, conservando página y preferencias. Las animaciones respetan movimiento reducido y detienen los elementos decorativos fuera de pantalla.
+
+La variante inversa usa lettering crema y trazos menta sobre transparencia, sin recuadro. La selección de logo depende del tema mediante CSS para evitar saltos durante la hidratación. CountryFlag es una primitiva SVG reutilizable; la etiqueta accesible del enlace indica el idioma de destino.

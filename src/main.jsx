@@ -4,5 +4,8 @@ import "./styles.css";
 import "./design-system/tokens.css";
 hydrateRoot(
   document.getElementById("root"),
-  <App page={document.body.dataset.page} />,
+  <App
+    page={document.body.dataset.page}
+    locale={document.body.dataset.locale || "es"}
+  />,
 );

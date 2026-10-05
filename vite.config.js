@@ -1,6 +1,18 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "node:path";
+const pages = [
+  "index.html",
+  "historia/index.html",
+  "archivo/index.html",
+  "privacidad/index.html",
+  "404.html",
+  "en/index.html",
+  "en/history/index.html",
+  "en/archive/index.html",
+  "en/privacy/index.html",
+  "en/404.html",
+];
 export default defineConfig(({ isSsrBuild }) => ({
   base: "/",
   plugins: [react()],
@@ -8,13 +20,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     rollupOptions: isSsrBuild
       ? { output: { entryFileNames: "entry-server.js" } }
       : {
-          input: {
-            home: resolve("index.html"),
-            history: resolve("historia/index.html"),
-            archive: resolve("archivo/index.html"),
-            privacy: resolve("privacidad/index.html"),
-            notfound: resolve("404.html"),
-          },
+          input: Object.fromEntries(pages.map((page) => [page, resolve(page)])),
         },
   },
 }));

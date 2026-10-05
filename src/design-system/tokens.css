@@ -58,3 +58,26 @@
   --sans: var(--font-body);
   --radius: var(--radius-sm);
 }
+
+:root {
+  --color-inverse-background: var(--palette-forest-700);
+  --color-inverse-text: var(--palette-paper-50);
+  --color-section-soft: #e8eee2;
+  --color-band: #edf0e5;
+  --color-header: rgba(247, 242, 232, 0.96);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-background: #101f1b;
+  --color-surface: #172b25;
+  --color-text: #ecf0e6;
+  --color-text-muted: #b7c8bc;
+  --color-brand: #b7d8c5;
+  --color-on-brand: #142c24;
+  --color-border: #3e584a;
+  --color-focus: #b7d8c5;
+  --button-background-hover: #cce7d5;
+  --color-section-soft: #1a3028;
+  --color-band: #1b332a;
+  --color-header: rgba(16, 31, 27, 0.96);
+}

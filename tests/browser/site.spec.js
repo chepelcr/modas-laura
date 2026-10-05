@@ -213,3 +213,59 @@ test("Decorative motion runs only in view and focused content stays opaque", asy
     )
     .toBe(0);
 });
+
+test("Language keeps the current page and theme persists across navigation", async ({
+  page,
+}) => {
+  await page.goto("historia/");
+  await expect(page.locator(".language-switch .country-flag path")).toHaveCount(
+    3,
+  );
+  await expect(page.locator(".language-switch")).toHaveText("");
+  await page.getByRole("button", { name: "Activar tema oscuro" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.getByRole("link", { name: "Cambiar a inglés" }).click();
+  await expect(page).toHaveURL(/\/en\/history\/$/);
+  await expect(page.locator(".language-switch .country-flag path")).toHaveCount(
+    51,
+  );
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await page.getByRole("button", { name: "Switch to light theme" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+});
+
+for (const width of [375, 1440]) {
+  test(`English routes and dark theme accessibility at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    const errors = [];
+    page.on("pageerror", (e) => errors.push(e.message));
+    for (const path of ["en/", "en/history/", "en/archive/", "en/privacy/"]) {
+      await page.goto(path);
+      await expect(page.locator("html")).toHaveAttribute("lang", "en");
+      await expect(page.locator("h1")).toHaveCount(1);
+      if ((await page.locator("html").getAttribute("data-theme")) !== "dark")
+        await page.locator(".theme-switch").click();
+      await page.locator("footer").scrollIntoViewIfNeeded();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+      const audit = await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+        .analyze();
+      expect(
+        audit.violations.map((v) => ({
+          id: v.id,
+          nodes: v.nodes.map((n) => n.target),
+        })),
+      ).toEqual([]);
+    }
+    expect(errors).toEqual([]);
+  });
+}

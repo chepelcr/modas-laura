@@ -1,20 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 import { Button, Icon } from "../design-system/Primitives.jsx";
-import { asset, routeUrl, site, whatsapp } from "../content/site.js";
+import { asset, site, whatsapp } from "../content/site.js";
 import { useActiveSection } from "../hooks/useActiveSection.js";
+import { useLocale } from "../i18n/LocaleContext.jsx";
+import { PreferenceControls } from "./PreferenceControls.jsx";
 export function Brand() {
+  const { t, routeUrl } = useLocale();
   return (
-    <a className="brand" href={routeUrl()} aria-label="Modas Laura, inicio">
+    <a
+      className="brand"
+      href={routeUrl()}
+      aria-label={t("Modas Laura, inicio")}
+    >
       <img
+        className="brand-light"
         src={asset("logo.webp")}
         width="2172"
         height="724"
-        alt="Modas Laura. Desde 1974, Costa Rica."
+        alt={t("Modas Laura. Desde 1974, Costa Rica.")}
+      />
+      <img
+        className="brand-dark"
+        src={asset("logo-dark.webp")}
+        width="2172"
+        height="724"
+        alt=""
+        aria-hidden="true"
       />
     </a>
   );
 }
 export function Header({ page }) {
+  const { t, routeUrl } = useLocale();
   const [open, setOpen] = useState(false);
   const menu = useRef(null),
     toggle = useRef(null);
@@ -39,12 +56,12 @@ export function Header({ page }) {
       }
       onClick={() => setOpen(false)}
     >
-      {item.label}
+      {t(item.label)}
     </a>
   ));
   useEffect(() => {
-    const dialog = menu.current;
-    const toggleButton = toggle.current;
+    const dialog = menu.current,
+      toggleButton = toggle.current;
     if (open) {
       const previousOverflow = document.documentElement.style.overflow;
       document.documentElement.style.overflow = "hidden";
@@ -61,32 +78,35 @@ export function Header({ page }) {
       <header className="header">
         <div className="nav-shell">
           <Brand />
-          <nav className="desktop-nav" aria-label="Principal">
+          <nav className="desktop-nav" aria-label={t("Principal")}>
             {links}
           </nav>
-          <Button
-            size="small"
-            className="header-cta"
-            href={whatsapp(
-              "Hola Modas Laura, quisiera información de sus productos.",
-            )}
-            target="_blank"
-            rel="noopener"
-          >
-            Hablemos <Icon />
-          </Button>
-          <button
-            type="button"
-            ref={toggle}
-            className="menu-toggle"
-            aria-label="Abrir menú"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen(true)}
-          >
-            <span />
-            <span />
-          </button>
+          <div className="header-controls">
+            <PreferenceControls />
+            <Button
+              size="small"
+              className="header-cta"
+              href={whatsapp(
+                t("Hola Modas Laura, quisiera información de sus productos."),
+              )}
+              target="_blank"
+              rel="noopener"
+            >
+              {t("Hablemos")} <Icon />
+            </Button>
+            <button
+              type="button"
+              ref={toggle}
+              className="menu-toggle"
+              aria-label={t("Abrir menú")}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen(true)}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </header>
       <dialog
@@ -103,44 +123,47 @@ export function Header({ page }) {
           <button
             type="button"
             className="menu-close"
-            aria-label="Cerrar menú"
+            aria-label={t("Cerrar menú")}
             onClick={() => setOpen(false)}
           >
             ×
           </button>
         </div>
-        <nav aria-label="Principal móvil">{links}</nav>
+        <nav aria-label={t("Principal móvil")}>{links}</nav>
         <Button
           href={whatsapp()}
           target="_blank"
           rel="noopener"
           onClick={() => setOpen(false)}
         >
-          Consultar por WhatsApp <Icon />
+          {t("Consultar por WhatsApp")} <Icon />
         </Button>
-        <p>Hecho en Costa Rica · Desde 1974</p>
+        <p>{t("Hecho en Costa Rica · Desde 1974")}</p>
       </dialog>
     </>
   );
 }
 export function Footer() {
+  const { t, routeUrl } = useLocale();
   return (
     <footer className="footer">
       <div className="footer-top">
         <Brand />
         <p>
-          Desde 1974, seguimos dando
+          {t("Desde 1974, seguimos dando")}
           <br />
-          nuevas puntadas a nuestra historia.
+          {t("nuevas puntadas a nuestra historia.")}
         </p>
         <a href={asset("tarjeta-85x55mm.pdf")} download>
-          Tarjeta de presentación <Icon />
+          {t("Tarjeta de presentación")} <Icon />
         </a>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Modas Laura · Costa Rica</span>
-        <span>Un negocio familiar de {site.owner}.</span>
-        <a href={routeUrl("privacidad/")}>Privacidad</a>
+        <span>
+          {t("Un negocio familiar de")} {site.owner}.
+        </span>
+        <a href={routeUrl("privacidad/")}>{t("Privacidad")}</a>
       </div>
     </footer>
   );

@@ -1,3 +1,4 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import { useRef, useState } from "react";
 import {
   Button,
@@ -8,13 +9,17 @@ import {
   Icon,
   IconButton,
 } from "../design-system/Primitives.jsx";
-import { consultationSteps } from "../content/site.js";
+import { consultationSteps, whatsapp } from "../content/site.js";
 export function ConsultationSteps() {
+  const { t } = useLocale();
   const [index, setIndex] = useState(0);
   const content = useRef(null),
     previous = useRef(null),
     next = useRef(null);
   const step = consultationSteps[index];
+  const href = step.href.startsWith("https:")
+    ? whatsapp(t(new URL(step.href).searchParams.get("text")))
+    : step.href;
   function change(direction) {
     const newIndex = Math.max(
       0,
@@ -41,22 +46,22 @@ export function ConsultationSteps() {
     <section className="process-section section">
       <Container>
         <div className="section-heading centered">
-          <Eyebrow>Estamos para ayudarte</Eyebrow>
+          <Eyebrow>{t("Estamos para ayudarte")}</Eyebrow>
           <Heading>
-            Una conversación.
+            {t("Una conversación.")}
             <br />
-            <em>El comienzo de tu elección.</em>
+            <em>{t("El comienzo de tu elección.")}</em>
           </Heading>
         </div>
         <Card as="div" className="process-card reveal" data-reveal="">
           <div className="process-top">
-            <span>Cómo consultar</span>
+            <span>{t("Cómo consultar")}</span>
             <span>0{index + 1} / 03</span>
           </div>
           <div className="process-controls">
             <IconButton
               ref={previous}
-              label="Paso anterior"
+              label={t("Paso anterior")}
               aria-controls="process-content"
               disabled={index === 0}
               onClick={() => change(-1)}
@@ -72,7 +77,7 @@ export function ConsultationSteps() {
             </div>
             <IconButton
               ref={next}
-              label="Paso siguiente"
+              label={t("Paso siguiente")}
               aria-controls="process-content"
               disabled={index === consultationSteps.length - 1}
               onClick={() => change(1)}
@@ -82,23 +87,23 @@ export function ConsultationSteps() {
           </div>
           <div id="process-content" ref={content} className="process-content">
             <div role="status" aria-live="polite" aria-atomic="true">
-              <Heading as="h3">{step.title}</Heading>
-              <p>{step.description}</p>
+              <Heading as="h3">{t(step.title)}</Heading>
+              <p>{t(step.description)}</p>
             </div>
             <Button
-              href={step.href}
+              href={href}
               {...(step.href.startsWith("https:")
                 ? { target: "_blank", rel: "noopener" }
                 : {})}
             >
-              {step.label}
+              {t(step.label)}
               <Icon />
             </Button>
           </div>
           <div
             className="process-progress"
             role="group"
-            aria-label={`Paso ${index + 1} de 3`}
+            aria-label={`${t("Paso")} ${index + 1} ${t("de")} 3`}
           >
             {consultationSteps.map((item, i) => (
               <span

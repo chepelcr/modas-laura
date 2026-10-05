@@ -4,6 +4,7 @@ export function usePageMotion() {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     const elements = [...document.querySelectorAll("[data-reveal]")];
     const visible = new Set();
+    const seen = new WeakSet();
     let frame;
     function update() {
       frame = undefined;
@@ -28,8 +29,18 @@ export function usePageMotion() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) visible.add(entry.target);
-          else visible.delete(entry.target);
+          if (entry.isIntersecting) {
+            visible.add(entry.target);
+            if (!reduced.matches && !seen.has(entry.target)) {
+              seen.add(entry.target);
+              entry.target.classList.add("entering");
+              entry.target.addEventListener(
+                "animationend",
+                () => entry.target.classList.remove("entering"),
+                { once: true },
+              );
+            }
+          } else visible.delete(entry.target);
           entry.target.classList.toggle("in-view", entry.isIntersecting);
         });
         schedule();

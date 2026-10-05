@@ -9,10 +9,7 @@
       content="Fotografías históricas de los productos y el taller de Modas Laura. Explorá el archivo restaurado y compará las imágenes originales."
     />
     <meta name="theme-color" content="#23564F" />
-    <link
-      rel="canonical"
-      href="https://modas-laura.jcampos.dev/archivo/"
-    />
+    <link rel="canonical" href="https://modas-laura.jcampos.dev/archivo/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CR" />
     <meta property="og:site_name" content="Modas Laura" />
@@ -32,16 +29,9 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link
-      rel="icon"
-      href="/assets/favicon.svg"
-      type="image/svg+xml"
-    />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="/assets/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      href="/assets/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,8 +45,42 @@
         "description": "Empresa familiar costarricense de almohadas y fundas, activa desde 1974."
       }
     </script>
+    <link
+      rel="alternate"
+      hreflang="es-CR"
+      href="https://modas-laura.jcampos.dev/archivo/"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://modas-laura.jcampos.dev/en/archive/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://modas-laura.jcampos.dev/archivo/"
+    />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("modas-laura-theme");
+          if (theme !== "light" && theme !== "dark")
+            theme = matchMedia("(prefers-color-scheme:dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.dataset.theme = theme;
+          if (
+            location.pathname === "/" &&
+            localStorage.getItem("modas-laura-language") === "en"
+          )
+            location.replace("/en/" + location.hash);
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
   </head>
-  <body data-page="archive">
+  <body data-page="archive" data-locale="es">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

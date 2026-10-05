@@ -1,3 +1,4 @@
+import { useLocale } from "../i18n/LocaleContext.jsx";
 import { useEffect, useState } from "react";
 import {
   Card,
@@ -7,42 +8,46 @@ import {
 } from "../design-system/Primitives.jsx";
 import { archiveEntries, asset } from "../content/site.js";
 export function ArchiveCard({ entry }) {
+  const { t } = useLocale();
   return (
     <Card id={entry.id} className="archive-card" data-category={entry.category}>
       <a
         href={asset(`archivo-${entry.id}.webp`)}
         target="_blank"
         rel="noopener"
-        aria-label={`Ver imagen restaurada ampliada: ${entry.title}`}
+        aria-label={`${t("Ver imagen restaurada ampliada:")} ${t(entry.title)}`}
       >
         <img
           src={asset(`archivo-${entry.id}.webp`)}
           width="1600"
           height="1200"
           loading="lazy"
-          alt={`${entry.title}, fotografía histórica restaurada.`}
+          alt={`${t(entry.title)}, ${t("fotografía histórica restaurada.")}`}
         />
       </a>
       <div className="archive-card-copy">
-        <span className="micro">Archivo · {entry.category}</span>
-        <Heading>{entry.title}</Heading>
-        <p>{entry.description}</p>
+        <span className="micro">
+          {t("Archivo")} · {t(entry.category)}
+        </span>
+        <Heading>{t(entry.title)}</Heading>
+        <p>{t(entry.description)}</p>
         <details>
-          <summary>Comparar con la foto original</summary>
+          <summary>{t("Comparar con la foto original")}</summary>
           <img
             src={asset(`original-${entry.id}.webp`)}
             width="1200"
             height="900"
             loading="lazy"
-            alt={`Fotografía original de archivo: ${entry.title}.`}
+            alt={`Fotografía original de archivo: ${t(entry.title)}.`}
           />
-          <span className="caption">Original, sin restauración.</span>
+          <span className="caption">{t("Original, sin restauración.")}</span>
         </details>
       </div>
     </Card>
   );
 }
 export function ArchiveGallery() {
+  const { t } = useLocale();
   const [filter, setFilter] = useState("todos");
   const entries = archiveEntries.filter(
     (entry) => filter === "todos" || entry.category === filter,
@@ -65,7 +70,7 @@ export function ArchiveGallery() {
   }, []);
   return (
     <Container as="section" className="archive-gallery">
-      <div className="filters" role="group" aria-label="Filtrar archivo">
+      <div className="filters" role="group" aria-label={t("Filtrar archivo")}>
         {["todos", "bebé", "hogar", "infantil", "taller"].map((category) => (
           <FilterChip
             key={category}
@@ -73,13 +78,14 @@ export function ArchiveGallery() {
             onClick={() => setFilter(category)}
           >
             {category === "todos"
-              ? "Todo el archivo"
-              : category[0].toUpperCase() + category.slice(1)}
+              ? t("Todo el archivo")
+              : t(category[0].toUpperCase() + category.slice(1))}
           </FilterChip>
         ))}
       </div>
       <p className="caption" role="status" aria-live="polite">
-        {entries.length} {entries.length === 1 ? "fotografía" : "fotografías"}
+        {entries.length}{" "}
+        {t(entries.length === 1 ? "fotografía" : "fotografías")}
       </p>
       <div className="archive-grid">
         {entries.map((entry) => (
