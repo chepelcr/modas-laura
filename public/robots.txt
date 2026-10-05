@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://modas-laura.jcampos.dev/sitemap.xml

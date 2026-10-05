@@ -1,0 +1,6 @@
+*.pdf binary
+*.png binary
+*.webp binary
+*.jpg binary
+*.ico binary
+*.vcf text eol=crlf
