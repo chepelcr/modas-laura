@@ -189,3 +189,27 @@ test("Product actions align across desktop cards", async ({ page }) => {
     );
   expect(Math.max(...bottoms) - Math.min(...bottoms)).toBeLessThan(1);
 });
+
+test("Decorative motion runs only in view and focused content stays opaque", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("./");
+  await page.locator(".process-card").scrollIntoViewIfNeeded();
+  await expect(page.locator(".process-card")).toHaveClass(/in-view/);
+  await expect
+    .poll(() =>
+      page.locator(".ring-one").evaluate((el) => el.getAnimations().length),
+    )
+    .toBe(1);
+  await page.locator(".process-card .button").focus();
+  await expect(page.locator(".process-card")).toHaveCSS("opacity", "1");
+  await page.locator("#contacto").evaluate((el) => el.scrollIntoView());
+  await expect(page.locator(".process-card")).not.toHaveClass(/in-view/);
+  await expect
+    .poll(() =>
+      page.locator(".ring-one").evaluate((el) => el.getAnimations().length),
+    )
+    .toBe(0);
+});
