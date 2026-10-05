@@ -543,6 +543,9 @@ summary:focus-visible {
 .portrait {
   position: relative;
 }
+.portrait-image {
+  position: relative;
+}
 .portrait img {
   width: 100%;
   aspect-ratio: 1;
@@ -552,13 +555,16 @@ summary:focus-visible {
 .portrait figcaption {
   font-size: 12px;
   color: var(--muted);
-  margin-top: 16px;
+  margin-top: 40px;
 }
 .portrait-tag {
+  --label-outset: 24px;
   position: absolute;
-  bottom: 54px;
-  left: -25px;
+  width: max-content;
+  bottom: calc(var(--label-rise, 34px) - var(--label-outset));
+  left: calc(-1 * var(--label-outset));
   transform: rotate(6deg);
+  transform-origin: bottom left;
   background: var(--bg);
   padding: 15px 20px;
   font-family: var(--serif);
@@ -1206,7 +1212,7 @@ details img {
   }
   .portrait-tag {
     font-size: 14px;
-    left: -12px;
+    --label-outset: 12px;
     padding: 12px;
   }
   .story-copy h2 {
@@ -1348,7 +1354,7 @@ details img {
     margin-inline: auto;
   }
   .portrait-tag {
-    left: -9px;
+    --label-outset: 9px;
   }
   .story-copy h2 {
     font-size: 39px;

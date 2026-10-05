@@ -3,6 +3,7 @@ import { asset, whatsapp } from "../content/site.js";
 import { useLocale } from "../i18n/LocaleContext.jsx";
 import { ProductGrid } from "../components/ProductCard.jsx";
 import { ConsultationSteps } from "../components/ConsultationSteps.jsx";
+import { PortraitLabel } from "../components/PortraitLabel.jsx";
 export default function Home() {
   const { t, routeUrl } = useLocale();
   return (
@@ -104,17 +105,21 @@ export default function Home() {
       <section className="story-preview section">
         <div className="wrap story-grid">
           <figure className="portrait reveal" data-reveal="">
-            <img
-              src={asset("vilma.webp")}
-              width="640"
-              height="640"
-              alt={t("Doña Vilma Corella Artavia, propietaria de Modas Laura.")}
-              loading="lazy"
-            />
+            <div className="portrait-image">
+              <img
+                src={asset("vilma.webp")}
+                width="640"
+                height="640"
+                alt={t(
+                  "Doña Vilma Corella Artavia, propietaria de Modas Laura.",
+                )}
+                loading="lazy"
+              />
+              <PortraitLabel>
+                {t("La persona detrás de la historia")}
+              </PortraitLabel>
+            </div>
             <figcaption>{t("Doña Vilma Corella Artavia")}</figcaption>
-            <span className="portrait-tag">
-              {t("La persona detrás de la historia")}
-            </span>
           </figure>
           <div className="story-copy reveal" data-reveal="">
             <span className="eyebrow">{t("Nuestra historia")}</span>

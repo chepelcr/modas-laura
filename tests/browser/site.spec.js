@@ -269,3 +269,32 @@ for (const width of [375, 1440]) {
     expect(errors).toEqual([]);
   });
 }
+
+test("Portrait label extends equally beyond the photo's left and bottom edges", async ({
+  page,
+}) => {
+  for (const width of [375, 768, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const path of ["./", "en/"]) {
+      await page.goto(path);
+      await page.locator(".portrait-tag").scrollIntoViewIfNeeded();
+      await expect
+        .poll(async () =>
+          page.locator(".portrait-image").evaluate((el) => {
+            const image = el.querySelector("img").getBoundingClientRect();
+            const label = el
+              .querySelector(".portrait-tag")
+              .getBoundingClientRect();
+            return Math.abs(
+              image.left - label.left - (label.bottom - image.bottom),
+            );
+          }),
+        )
+        .toBeLessThan(1);
+      const overflow = await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      );
+      expect(overflow).toBe(false);
+    }
+  }
+});
