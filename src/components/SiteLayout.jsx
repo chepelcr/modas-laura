@@ -4,13 +4,14 @@ import { asset, site, whatsapp } from "../content/site.js";
 import { useActiveSection } from "../hooks/useActiveSection.js";
 import { useLocale } from "../i18n/LocaleContext.jsx";
 import { PreferenceControls } from "./PreferenceControls.jsx";
-export function Brand() {
+export function Brand({ onClick }) {
   const { t, routeUrl } = useLocale();
   return (
     <a
       className="brand"
       href={routeUrl()}
       aria-label={t("Modas Laura, inicio")}
+      onClick={onClick}
     >
       <img
         className="brand-light"
@@ -119,7 +120,7 @@ export function Header({ page }) {
         }}
       >
         <div className="menu-head">
-          <span>Modas Laura</span>
+          <Brand onClick={() => setOpen(false)} />
           <button
             type="button"
             className="menu-close"

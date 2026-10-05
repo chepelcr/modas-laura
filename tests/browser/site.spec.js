@@ -79,6 +79,8 @@ test("Mobile menu is modal, closes with Escape and restores focus", async ({
   const toggle = page.getByRole("button", { name: "Abrir menú" });
   await toggle.click();
   await expect(page.locator("dialog")).toBeVisible();
+  await expect(page.locator(".menu-head .brand-light")).toBeVisible();
+  await expect(page.locator(".menu-head .brand")).toHaveText("");
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
   await page.keyboard.press("Escape");
   await expect(page.locator("dialog")).not.toBeVisible();
