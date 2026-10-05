@@ -1,4 +1,7 @@
 export const en = {
+  "Composición ilustrativa de una almohadita celeste con encaje, inspirada en nuestro archivo.":
+    "Illustrative composition of a sky-blue lace pillow, inspired by our archive.",
+  "Detalles que cuentan nuestra historia.": "Details that tell our story.",
   "Composición de tres almohaditas con funda rosa, blanca y celeste, separadas y con encaje blanco.":
     "Illustrative arrangement of three separate pink, white and blue pillows with covers and white lace.",
   "Guardamos tu preferencia de idioma y apariencia en este navegador. Podés cambiarlas desde los controles del sitio.":

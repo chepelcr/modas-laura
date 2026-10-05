@@ -42,11 +42,11 @@ export default function Home() {
         <figure className="hero-visual reveal" data-reveal="">
           <div className="hero-frame">
             <img
-              src={asset("portada.webp")}
-              width="1600"
-              height="533"
+              src={asset("hero-1974.webp")}
+              width="1200"
+              height="1500"
               alt={t(
-                "Composición ilustrativa: almohadita con encaje, almohada sencilla verde y funda blanca para almohada grande.",
+                "Composición ilustrativa de una almohadita celeste con encaje, inspirada en nuestro archivo.",
               )}
               fetchPriority="high"
             />
@@ -57,7 +57,7 @@ export default function Home() {
             </div>
           </div>
           <figcaption>
-            {t("Tres líneas. Una misma historia. ")}
+            {t("Detalles que cuentan nuestra historia. ")}
             <span>{t("Composición ilustrativa.")}</span>
           </figcaption>
         </figure>

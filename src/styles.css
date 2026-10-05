@@ -381,7 +381,7 @@ summary:focus-visible {
   width: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 85% 50%;
+  object-position: 50% 50%;
 }
 .heritage-seal {
   position: absolute;

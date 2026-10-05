@@ -318,3 +318,36 @@ test("Archive collection action opens the home collection in the selected langua
     await expect(page.locator("#coleccion")).toBeInViewport();
   }
 });
+
+test("Content vanishes outside the reading area and returns on every page", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.setViewportSize({ width: 1440, height: 600 });
+  for (const path of [
+    "./",
+    "historia/",
+    "archivo/",
+    "privacidad/",
+    "en/",
+    "en/history/",
+    "en/archive/",
+    "en/privacy/",
+  ]) {
+    await page.goto(path);
+    const first = page.locator("main [data-reveal]").first();
+    await first.scrollIntoViewIfNeeded();
+    await expect(first).toHaveCSS("opacity", "1");
+    await page.locator("main").click({ position: { x: 1, y: 1 }, force: true });
+    await page.evaluate(() => {
+      document.activeElement.blur();
+      window.scrollTo(0, document.documentElement.scrollHeight);
+    });
+    await expect(first).toHaveCSS("opacity", "0");
+    await first.scrollIntoViewIfNeeded();
+    await expect(first).toHaveCSS("opacity", "1");
+    await expect(page.locator(".brand-band")).toHaveCount(
+      path === "./" || path === "en/" ? 1 : 0,
+    );
+  }
+});
