@@ -482,7 +482,9 @@ summary:focus-visible {
   transform: scale(1.025);
 }
 .product-photo.con-funda img {
-  object-position: 60% 50%;
+  object-fit: contain;
+  object-position: center;
+  background: var(--palette-ivory-100);
 }
 .product-photo.sencilla img {
   object-position: 50% 50%;

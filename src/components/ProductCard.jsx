@@ -21,6 +21,9 @@ export function ProductCard({ product }) {
         {product.archival && (
           <span className="photo-note">{t("Foto de archivo")}</span>
         )}
+        {product.illustrative && (
+          <span className="photo-note">{t("Composición ilustrativa.")}</span>
+        )}
       </div>
       <div className="product-copy">
         <span className="micro">{t(product.kicker)}</span>

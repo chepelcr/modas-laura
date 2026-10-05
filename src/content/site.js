@@ -16,12 +16,13 @@ export const products = [
   {
     id: "con-funda",
     number: "01",
-    image: "con-funda.webp",
+    image: "con-funda-presentacion.webp",
+    illustrative: true,
     kicker: "Con ese detalle especial.",
     title: "Almohadas con funda",
     description:
       "Almohaditas para bebé con funda y detalles de encaje. Consultá los diseños y colores disponibles.",
-    alt: "Almohadita celeste con encaje blanco y una ilustración central.",
+    alt: "Composición de tres almohaditas con funda rosa, blanca y celeste, separadas y con encaje blanco.",
   },
   {
     id: "sencilla",

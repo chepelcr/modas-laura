@@ -1,4 +1,6 @@
 export const en = {
+  "Composición de tres almohaditas con funda rosa, blanca y celeste, separadas y con encaje blanco.":
+    "Illustrative arrangement of three separate pink, white and blue pillows with covers and white lace.",
   "Guardamos tu preferencia de idioma y apariencia en este navegador. Podés cambiarlas desde los controles del sitio.":
     "We save your language and appearance preferences in this browser. You can change them using the site controls.",
   "Hecho en Costa Rica · Desde 1974": "Made in Costa Rica · Since 1974",
