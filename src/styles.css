@@ -614,7 +614,7 @@ summary:focus-visible {
   transition: background 0.2s;
 }
 .round-button:hover:not(:disabled) {
-  background: var(--mint);
+  background: var(--color-section-soft);
 }
 .round-button:disabled {
   opacity: 0.35;
@@ -1563,7 +1563,7 @@ details img {
     border-color var(--duration-feedback),
     transform var(--duration-feedback);
 }
-.control-button:hover {
+.control-button:hover:not(:disabled) {
   background: var(--color-section-soft);
   border-color: var(--brand);
   transform: translateY(-2px);
