@@ -148,3 +148,38 @@ export const archiveEntries = [
       "Funda blanca con borde azul sobre una almohada. El peluche forma parte de la escena de la fotografía.",
   },
 ];
+
+export const logoHistory = [
+  {
+    id: "primeras-etiquetas",
+    stage: "Primeras etiquetas",
+    title: "El primer bebé",
+    image: "logo-historico-bebe.webp",
+    alt: "Bebé dibujado en azul, sostenido por una tela anudada: símbolo de las primeras etiquetas.",
+    description:
+      "El bebé ya acompañaba nuestras etiquetas. Este símbolo fue reconstruido digitalmente a partir de una fotografía del archivo familiar.",
+    note: "Reconstrucción digital de una etiqueta histórica.",
+    source: "original-sencilla-verde.webp",
+  },
+  {
+    id: "logo-circular",
+    stage: "Una etapa posterior",
+    title: "El sello circular",
+    image: "logo-historico-circular.webp",
+    alt: "Logo circular verde de Modas Laura con un bebé y la frase Hecho en Costa Rica.",
+    description:
+      "El bebé tomó color dentro de un sello verde, acompañado por el nombre Modas Laura y la frase Hecho en Costa Rica.",
+    note: "Logo conservado del archivo familiar.",
+  },
+  {
+    id: "logo-actual",
+    stage: "Hoy",
+    title: "Una identidad familiar",
+    image: "logo.webp",
+    darkImage: "logo-dark.webp",
+    alt: "Logo actual de Modas Laura: bebé entre almohaditas con encaje y el nombre de la marca.",
+    description:
+      "El logo actual conserva al bebé y el encaje, con una inspiración especial: una fotografía familiar de infancia. Una nueva imagen para la misma historia.",
+    note: "Nuestra identidad actual · Desde 1974.",
+  },
+];

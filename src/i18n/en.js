@@ -1,4 +1,34 @@
 export const en = {
+  "La evolución de nuestra identidad": "The evolution of our identity",
+  "Un bebé.": "One baby.",
+  "Tres etapas de nuestra historia.": "Three chapters of our story.",
+  "Los símbolos cambian y nuestras raíces permanecen. Estas etapas reúnen los logos conservados por la familia; no contamos con fechas exactas para las versiones históricas.":
+    "Our symbols change and our roots remain. These chapters bring together the logos preserved by the family; exact dates for the historical versions are unknown.",
+  "Primeras etiquetas": "Early labels",
+  "El primer bebé": "The first baby",
+  "Bebé dibujado en azul, sostenido por una tela anudada: símbolo de las primeras etiquetas.":
+    "A baby drawn in blue, held in a knotted cloth: the symbol from our early labels.",
+  "El bebé ya acompañaba nuestras etiquetas. Este símbolo fue reconstruido digitalmente a partir de una fotografía del archivo familiar.":
+    "The baby already appeared on our labels. This symbol was digitally reconstructed from a photograph in the family archive.",
+  "Reconstrucción digital de una etiqueta histórica.":
+    "Digital reconstruction from a historical label.",
+  "Una etapa posterior": "A later chapter",
+  "El sello circular": "The circular emblem",
+  "Logo circular verde de Modas Laura con un bebé y la frase Hecho en Costa Rica.":
+    "Green circular Modas Laura logo featuring a baby and the phrase Made in Costa Rica.",
+  "El bebé tomó color dentro de un sello verde, acompañado por el nombre Modas Laura y la frase Hecho en Costa Rica.":
+    "The baby appeared in colour within a green emblem, alongside the Modas Laura name and the phrase Made in Costa Rica.",
+  "Logo conservado del archivo familiar.":
+    "Logo preserved in the family archive.",
+  "Una identidad familiar": "A family identity",
+  "Logo actual de Modas Laura: bebé entre almohaditas con encaje y el nombre de la marca.":
+    "Current Modas Laura logo: a baby between lace-trimmed pillows and the brand name.",
+  "El logo actual conserva al bebé y el encaje, con una inspiración especial: una fotografía familiar de infancia. Una nueva imagen para la misma historia.":
+    "The current logo keeps the baby and lace, with a special inspiration: a family childhood photograph. A new look for the same story.",
+  "Nuestra identidad actual · Desde 1974.":
+    "Our current identity · Since 1974.",
+  "Ver la etiqueta de origen": "View the original label",
+
   "Una historia": "Our story",
   desde: "since",
   "Composición ilustrativa de una almohadita celeste con encaje, inspirada en nuestro archivo.":

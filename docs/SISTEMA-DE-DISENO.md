@@ -33,3 +33,7 @@ La variante inversa usa lettering crema y trazos menta sobre transparencia, sin 
 La distribución sigue la referencia «Cómo funciona» de Sóköl: ancho máximo de 720 px, relleno de 32 px en escritorio y 20 px en móvil, controles laterales de 44 px e icono centrado en un área de 160 px. Descripción y acción comparten una fila en escritorio; se apilan en móvil. El progreso queda centrado al pie. Se conservan las primitivas, paleta y tipografía de Modas Laura. Los tamaños se compactan en pantallas de poca altura para mantener todos los pasos visibles.
 
 El sello de origen divide «Una historia / desde» y «Our story / since» en dos líneas para conservar margen dentro del círculo.
+
+## Archivo · Evolución del logo
+
+LogoTimeline presenta tres etapas en una lista ordenada: símbolo de las primeras etiquetas (reconstrucción digital identificada y enlazada a su fotografía original), sello circular conservado y logo familiar actual. Los registros viven en logoHistory dentro de src/content/site.js. No se atribuyen fechas no documentadas. La disposición tiene tres columnas en escritorio y una línea vertical en móvil; el logo actual usa la variante inversa en tema oscuro. La sección tiene el ancla #logos y traducción al inglés.

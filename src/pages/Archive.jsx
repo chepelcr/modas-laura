@@ -2,6 +2,7 @@ import { Button, Heading, Icon } from "../design-system/Primitives.jsx";
 import { asset } from "../content/site.js";
 import { useLocale } from "../i18n/LocaleContext.jsx";
 import { ArchiveGallery } from "../components/ArchiveGallery.jsx";
+import { LogoTimeline } from "../components/LogoTimeline.jsx";
 export default function Archive() {
   const { t, routeUrl } = useLocale();
   return (
@@ -27,6 +28,7 @@ export default function Archive() {
           )}
         </div>
       </section>
+      <LogoTimeline />
       <ArchiveGallery />
       <section className="closing section wrap">
         <span className="eyebrow">{t("Nuestra colección actual")}</span>
