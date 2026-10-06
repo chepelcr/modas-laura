@@ -1853,8 +1853,9 @@ p,
   display: grid;
   place-items: center;
 }
-.logo-history-image.current {
-  background: var(--surface);
+.logo-history-image.current,
+.logo-history-image.logo-circular {
+  background: transparent;
 }
 .logo-history-image img {
   width: 100%;

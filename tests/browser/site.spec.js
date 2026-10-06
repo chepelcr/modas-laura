@@ -53,7 +53,7 @@ test("Guided consultation respects endpoints and preserves keyboard focus", asyn
     page.getByRole("heading", { name: "Encontrá tu línea" }),
   ).toBeVisible();
 });
-test("Archive filters and originals work and direct anchors expose historic products", async ({
+test("Archive filters and restored images work and direct anchors expose historic products", async ({
   page,
 }) => {
   await page.goto("archivo/");
@@ -63,10 +63,15 @@ test("Archive filters and originals work and direct anchors expose historic prod
   await expect(
     page.getByRole("heading", { name: "Almohada infantil", exact: true }),
   ).toBeVisible();
-  await page
-    .getByText("Comparar con la foto original", { exact: true })
-    .click();
-  await expect(page.locator("details img")).toBeVisible();
+  await expect(page.locator(".archive-card details")).toHaveCount(0);
+  await expect(page.locator(".archive-card img")).toHaveAttribute(
+    "src",
+    "/assets/archivo-almohada-infantil.webp",
+  );
+  await expect(page.locator(".archive-card > a")).toHaveAttribute(
+    "href",
+    "/assets/archivo-almohada-infantil.webp",
+  );
   await page.goto("archivo/#cogeollas");
   await expect(page.locator("#cogeollas")).toBeVisible();
   await expect(page.locator(".archive-card")).toHaveCount(10);

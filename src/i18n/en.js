@@ -148,8 +148,8 @@ export const en = {
   "Memoria de un oficio.": "The story of a craft.",
   "Una mirada a los productos, los detalles y el taller que han formado parte de nuestra historia.":
     "A look at the products, details and workshop that have been part of our story.",
-  "Estas imágenes documentan etapas anteriores; los modelos mostrados no constituyen un catálogo de disponibilidad actual. Las fotografías fueron restauradas con apoyo de IA y pueden contener detalles reconstruidos. Podés compararlas con sus originales.":
-    "These images document earlier chapters; the designs shown are not a catalogue of current availability. The photographs were restored with AI assistance and may contain reconstructed details. You can compare them with the originals.",
+  "Estas imágenes documentan etapas anteriores; los modelos mostrados no constituyen un catálogo de disponibilidad actual. Las fotografías fueron restauradas con apoyo de IA y pueden contener detalles reconstruidos.":
+    "These images document earlier chapters; the designs shown are not a catalogue of current availability. The photographs were restored with AI assistance and may contain reconstructed details.",
   "Seguimos aquí.": "We are still here.",
   "Seguimos creando.": "We keep creating.",
   "Ver líneas actuales": "See current collections",

@@ -31,17 +31,6 @@ export function ArchiveCard({ entry }) {
         </span>
         <Heading>{t(entry.title)}</Heading>
         <p>{t(entry.description)}</p>
-        <details>
-          <summary>{t("Comparar con la foto original")}</summary>
-          <img
-            src={asset(`original-${entry.id}.webp`)}
-            width="1200"
-            height="900"
-            loading="lazy"
-            alt={`Fotografía original de archivo: ${t(entry.title)}.`}
-          />
-          <span className="caption">{t("Original, sin restauración.")}</span>
-        </details>
       </div>
     </Card>
   );

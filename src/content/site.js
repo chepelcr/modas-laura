@@ -159,13 +159,12 @@ export const logoHistory = [
     description:
       "El bebé ya acompañaba nuestras etiquetas. Este símbolo fue reconstruido digitalmente a partir de una fotografía del archivo familiar.",
     note: "Reconstrucción digital de una etiqueta histórica.",
-    source: "original-sencilla-verde.webp",
   },
   {
     id: "logo-circular",
     stage: "Una etapa posterior",
     title: "El sello circular",
-    image: "logo-historico-circular.webp",
+    image: "logo-historico-circular-transparente.webp",
     alt: "Logo circular verde de Modas Laura con un bebé y la frase Hecho en Costa Rica.",
     description:
       "El bebé tomó color dentro de un sello verde, acompañado por el nombre Modas Laura y la frase Hecho en Costa Rica.",

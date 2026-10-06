@@ -24,7 +24,7 @@ export default function Archive() {
         </p>
         <div className="archive-notice">
           {t(
-            "Estas imágenes documentan etapas anteriores; los modelos mostrados no constituyen un catálogo de disponibilidad actual. Las fotografías fueron restauradas con apoyo de IA y pueden contener detalles reconstruidos. Podés compararlas con sus originales.",
+            "Estas imágenes documentan etapas anteriores; los modelos mostrados no constituyen un catálogo de disponibilidad actual. Las fotografías fueron restauradas con apoyo de IA y pueden contener detalles reconstruidos.",
           )}
         </div>
       </section>

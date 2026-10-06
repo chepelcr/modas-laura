@@ -32,7 +32,7 @@ export function LogoTimeline() {
               <Eyebrow>{t(entry.stage)}</Eyebrow>
             </div>
             <figure
-              className={`logo-history-image${entry.darkImage ? " current" : ""}`}
+              className={`logo-history-image ${entry.id}${entry.darkImage ? " current" : ""}`}
             >
               <img
                 className={entry.darkImage ? "brand-light" : undefined}
@@ -63,16 +63,6 @@ export function LogoTimeline() {
             <Heading as="h3">{t(entry.title)}</Heading>
             <p>{t(entry.description)}</p>
             <small>{t(entry.note)}</small>
-            {entry.source && (
-              <a
-                className="text-link"
-                href={asset(entry.source)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t("Ver la etiqueta de origen")}
-              </a>
-            )}
           </li>
         ))}
       </ol>
