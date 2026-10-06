@@ -22,7 +22,7 @@ export function Brand({ onClick }) {
       />
       <img
         className="brand-dark"
-        src={asset("logo-dark.webp")}
+        src={asset("logo-dark.svg")}
         width="2172"
         height="724"
         alt=""

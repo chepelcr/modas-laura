@@ -26,7 +26,7 @@ El logo aprobado usa un bebé inspirado en la foto de infancia de la mamá de Jo
 
 LocaleProvider comparte traducciones y rutas españolas/inglesas entre componentes. ThemeProvider y los tokens semánticos definen temas claro y oscuro; el encabezado permite cambiar ambos, conservando página y preferencias. Las animaciones respetan movimiento reducido y detienen los elementos decorativos fuera de pantalla.
 
-La variante inversa usa lettering crema y trazos menta sobre transparencia, sin recuadro. La selección de logo depende del tema mediante CSS para evitar saltos durante la hidratación. CountryFlag es una primitiva SVG reutilizable; la etiqueta accesible del enlace indica el idioma de destino.
+La variante oscura usa lettering crema y conserva los bordes oscuros originales del bebé, la tela y las almohaditas sobre transparencia, sin recuadro. El SVG compone la ilustración original y el lettering claro sin redibujar los elementos. La selección de logo depende del tema mediante CSS para evitar saltos durante la hidratación. CountryFlag es una primitiva SVG reutilizable; la etiqueta accesible del enlace indica el idioma de destino.
 
 ## Cómo consultar · Disposición de la tarjeta
 

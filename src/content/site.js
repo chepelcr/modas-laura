@@ -175,7 +175,7 @@ export const logoHistory = [
     stage: "Hoy",
     title: "Una identidad familiar",
     image: "logo.webp",
-    darkImage: "logo-dark.webp",
+    darkImage: "logo-dark.svg",
     alt: "Logo actual de Modas Laura: bebé entre almohaditas con encaje y el nombre de la marca.",
     description:
       "El logo actual conserva al bebé y el encaje, con una inspiración especial: una fotografía familiar de infancia. Una nueva imagen para la misma historia.",
