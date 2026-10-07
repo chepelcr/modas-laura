@@ -63,8 +63,10 @@ export function CorporateGifts({ standalone = false }) {
                 />
               </div>
               <span className="eyebrow">{t(style.title)}</span>
-              <Heading as="h3">{t(style.size)}</Heading>
+              <Heading as="h3">{t(style.name)}</Heading>
               <p>
+                {t(style.size)}
+                <br />
                 {t(style.measurementLabel)}
                 <br />
                 {t(style.description)}

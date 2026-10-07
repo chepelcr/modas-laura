@@ -190,6 +190,7 @@ export const corporateCatalog = {
     {
       id: "estilo-1",
       title: "Estilo 1",
+      name: "Almohadita clásica",
       size: "18 × 14 cm",
       image: "disenos/estilo-1-modas-laura.png",
       alt: "Propuesta ilustrativa del estilo 1, 18 × 14 cm, con el logo de Modas Laura.",
@@ -201,6 +202,7 @@ export const corporateCatalog = {
     {
       id: "estilo-2",
       title: "Estilo 2",
+      name: "Almohadita mediana",
       size: "22 × 20 cm",
       image: "disenos/estilo-2-modas-laura.png",
       alt: "Propuesta ilustrativa del estilo 2, 22 × 20 cm, con el logo de Modas Laura.",
@@ -212,6 +214,7 @@ export const corporateCatalog = {
     {
       id: "estilo-3",
       title: "Estilo 3",
+      name: "Almohadita con borde",
       size: "28 × 28 cm",
       image: "disenos/estilo-3-modas-laura.png",
       alt: "Propuesta ilustrativa del estilo 3, 28 × 28 cm, con el logo de Modas Laura.",
@@ -223,6 +226,7 @@ export const corporateCatalog = {
     {
       id: "estilo-4",
       title: "Estilo 4",
+      name: "Almohada oscura",
       size: "A4",
       measurementLabel: "Sublimado completo",
       description: "Almohada oscura con sublimado completo en formato A4.",
@@ -234,6 +238,7 @@ export const corporateCatalog = {
     {
       id: "estilo-5",
       title: "Estilo 5",
+      name: "Almohada con encaje",
       size: "35 × 25 cm aprox.",
       measurementLabel: "Almohada y funda con encaje",
       description:

@@ -1,4 +1,9 @@
 export const en = {
+  "Almohadita clásica": "Classic pillow",
+  "Almohadita mediana": "Medium pillow",
+  "Almohadita con borde": "Pillow with a border",
+  "Almohada oscura": "Dark pillow",
+  "Almohada con encaje": "Lace-trimmed pillow",
   "Almohaditas personalizadas para regalos de empresa. Explorá cinco estilos y contanos qué diseño, cantidad y fecha tenés en mente.":
     "Personalized pillows for corporate gifts. Explore five styles and tell us your design, quantity and date.",
   "Estilo 4": "Style 4",
