@@ -25,10 +25,24 @@ for (const [home, corporate, designs, heading, link] of [
     await expect(
       page.locator("#regalos-corporativos, #disenos-personalizados"),
     ).toHaveCount(0);
+    await expect(
+      page.locator(
+        '#mobile-menu a[href$="/disenos-personalizados"], #mobile-menu a[href$="/personalized-designs"]',
+      ),
+    ).toHaveCount(1);
     await page.goto(corporate);
     await expect(page.locator("h1")).toHaveAccessibleName(heading);
     await expect(page.locator(".corporate-style")).toHaveCount(5);
-    await expect(page.locator(".custom-design-grid figure")).toHaveCount(9);
+    await expect(page.locator(".custom-design-grid figure")).toHaveCount(7);
+    await expect(page.locator("main")).not.toContainText(/\b(?:IA|AI)\b/);
+    for (let index = 0; index < 3; index++) {
+      await expect(
+        page.locator(".custom-design-grid img").nth(index),
+      ).toHaveAttribute(
+        "src",
+        `/assets/disenos/estilo-${index + 1}-modas-laura.png`,
+      );
+    }
     await expect(page.locator(".corporate-style").nth(3)).toContainText("A4");
     await expect(page.locator(".corporate-style").nth(4)).toContainText(
       "35 × 25 cm",
@@ -48,6 +62,11 @@ for (const [home, corporate, designs, heading, link] of [
     for (const path of [corporate, designs]) {
       await page.goto(path);
       await expect(page.locator("h1")).toHaveCount(1);
+      if (path === designs) {
+        await expect(
+          page.locator('.desktop-nav a[aria-current="page"]'),
+        ).toHaveAttribute("href", `/${designs.replace(/\/$/, "")}`);
+      }
       for (const image of await page.locator("main img").all()) {
         await image.scrollIntoViewIfNeeded();
         await expect(image).toBeVisible();

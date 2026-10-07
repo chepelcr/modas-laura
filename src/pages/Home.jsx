@@ -190,7 +190,7 @@ export default function Home() {
           </div>
           <p className="caption">
             {t(
-              "Productos históricos. Fotografías del archivo familiar restauradas con apoyo de IA; algunos detalles pueden haber sido reconstruidos.",
+              "Productos históricos. Fotografías restauradas del archivo familiar.",
             )}
           </p>
         </div>

@@ -55,7 +55,7 @@ text(42,631,'Un detalle con',36,'Editorial',FOREST)
 text(42,585,'tu identidad.',36,'EditorialItalic',FOREST)
 para('Almohaditas personalizadas para regalos corporativos. Cinco estilos para empezar a crear tu propuesta.',42,550,465,13)
 image(catalog['coverImage'],60,295,475,205)
-text(42,275,'Propuesta ilustrativa con nuestro logo. Edición con IA.',8,'Body',MUTED)
+text(42,275,'Propuesta ilustrativa con nuestro logo.',8,'Body',MUTED)
 text(42,252,'18 × 14 cm  /  22 × 20 cm  /  28 × 28 cm',14,'BodyBold',FOREST)
 text(42,224,'Sublimado completo A4 · Almohada y funda con encaje',11)
 text(42,202,'Por Vilma Corella Artavia',11)
@@ -69,7 +69,7 @@ for num,style in enumerate(catalog['styles'],2):
     image(style['image'],65,292,465,285)
     text(42,262,'Almohada y funda con encaje' if style['id']=='estilo-5' else 'Diseño personalizado',22,'Editorial',FOREST)
     para(style['description'] + '<br/>Contanos el diseño, la cantidad y la fecha para consultar las opciones.',42,239,490,11)
-    note = 'Propuesta ilustrativa con el logo de Modas Laura. Imagen editada con IA.' if style.get('illustrative') else 'Fotografía de un trabajo realizado. Fondo eliminado con IA. La marca mostrada pertenece a su titular.'
+    note = 'Propuesta ilustrativa con el logo de Modas Laura.' if style.get('illustrative') else 'Fotografía de un trabajo realizado. La marca mostrada pertenece a su titular.'
     para(note + ' Consultá precios y disponibilidad.',42,179,480,9,MUTED)
     contact(127)
     c.showPage()

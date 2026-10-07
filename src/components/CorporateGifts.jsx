@@ -84,9 +84,6 @@ export function CorporateGifts({ standalone = false }) {
         </div>
         <p className="caption">
           {t(
-            "Estilos 1, 2 y 3: propuestas ilustrativas con nuestro logo, editadas con IA. Estilos 4 y 5: fotografías de trabajos realizados con el fondo eliminado con IA.",
-          )}{" "}
-          {t(
             "Confirmá diseño, materiales, cantidades, precios, disponibilidad y fecha antes de encargar.",
           )}
         </p>
@@ -121,8 +118,6 @@ export function CustomDesigns({ standalone = false }) {
                 {design.backgroundRemoved && (
                   <>
                     <br />
-                    <small>{t("Fondo eliminado con IA.")}</small>
-                    <br />
                     <a
                       href={asset(design.originalImage)}
                       target="_blank"
@@ -138,7 +133,7 @@ export function CustomDesigns({ standalone = false }) {
         </div>
         <p className="caption">
           {t(
-            "Fotografías de trabajos realizados, con marcas y nombres personalizados. Algunas imágenes tienen el fondo eliminado con IA y enlazan a su foto original. Las marcas pertenecen a sus respectivos titulares; estos ejemplos no implican una relación comercial actual.",
+            "Propuestas con nuestro logo y trabajos personalizados con nombres y marcas. Las marcas pertenecen a sus respectivos titulares; estos ejemplos no implican una relación comercial actual.",
           )}
         </p>
       </div>

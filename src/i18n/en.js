@@ -14,8 +14,6 @@ export const en = {
     "Style 4 dark pillow featuring an Interfaz design, an example of full sublimation.",
   "Almohada y funda con encaje del estilo 5, con sublimado central de Interfaz.":
     "Style 5 pillow and lace-trimmed cover featuring an Interfaz design in the center.",
-  "Estilos 1, 2 y 3: propuestas ilustrativas con nuestro logo, editadas con IA. Estilos 4 y 5: fotografías de trabajos realizados con el fondo eliminado con IA.":
-    "Styles 1, 2 and 3: illustrative mockups featuring our logo, edited with AI. Styles 4 and 5: photos of previous work with backgrounds removed using AI.",
   "Propuesta ilustrativa del estilo 1, 18 × 14 cm, con el logo de Modas Laura.":
     "Illustrative style 1 mockup, 18 × 14 cm, featuring the Modas Laura logo.",
   "Propuesta ilustrativa del estilo 2, 22 × 20 cm, con el logo de Modas Laura.":
@@ -23,10 +21,9 @@ export const en = {
   "Propuesta ilustrativa del estilo 3, 28 × 28 cm, con el logo de Modas Laura.":
     "Illustrative style 3 mockup, 28 × 28 cm, featuring the Modas Laura logo.",
 
-  "Fondo eliminado con IA.": "Background removed with AI.",
   "Ver foto original": "View original photo",
-  "Fotografías de trabajos realizados, con marcas y nombres personalizados. Algunas imágenes tienen el fondo eliminado con IA y enlazan a su foto original. Las marcas pertenecen a sus respectivos titulares; estos ejemplos no implican una relación comercial actual.":
-    "Photos of previous work featuring personalized names and brands. Some backgrounds were removed with AI; links to the original photos are provided. Trademarks belong to their respective owners; these examples do not imply a current business relationship.",
+  "Propuestas con nuestro logo y trabajos personalizados con nombres y marcas. Las marcas pertenecen a sus respectivos titulares; estos ejemplos no implican una relación comercial actual.":
+    "Mockups featuring our logo and personalized work with names and brands. Trademarks belong to their respective owners; these examples do not imply a current business relationship.",
   "Ver diseños personalizados": "View personalized designs",
   "Regalos corporativos": "Corporate gifts",
   "Tu marca,": "Your brand,",
@@ -161,8 +158,8 @@ export const en = {
     "A larger pillow for children, from the historical archive.",
   "Otras etapas": "Other chapters",
   "Almohada infantil": "Children’s pillow",
-  "Productos históricos. Fotografías del archivo familiar restauradas con apoyo de IA; algunos detalles pueden haber sido reconstruidos.":
-    "Historical products. Family archive photographs restored with AI assistance; some details may have been reconstructed.",
+  "Productos históricos. Fotografías restauradas del archivo familiar.":
+    "Historical products. Restored photographs from the family archive.",
   "Sigamos en contacto": "Let’s stay in touch",
   "El siguiente detalle": "Let’s choose",
   "lo elegimos con vos.": "your next detail together.",
@@ -218,8 +215,8 @@ export const en = {
   "Memoria de un oficio.": "The story of a craft.",
   "Una mirada a los productos, los detalles y el taller que han formado parte de nuestra historia.":
     "A look at the products, details and workshop that have been part of our story.",
-  "Estas imágenes documentan etapas anteriores; los modelos mostrados no constituyen un catálogo de disponibilidad actual. Las fotografías fueron restauradas con apoyo de IA y pueden contener detalles reconstruidos.":
-    "These images document earlier chapters; the designs shown are not a catalogue of current availability. The photographs were restored with AI assistance and may contain reconstructed details.",
+  "Estas imágenes documentan etapas anteriores; los modelos mostrados no constituyen un catálogo de disponibilidad actual. Fotografías restauradas del archivo familiar.":
+    "These images document earlier chapters; the designs shown are not a catalogue of current availability. Restored photographs from the family archive.",
   "Seguimos aquí.": "We are still here.",
   "Seguimos creando.": "We keep creating.",
   "Ver líneas actuales": "See current collections",

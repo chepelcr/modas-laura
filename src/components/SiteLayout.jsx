@@ -44,6 +44,11 @@ export function Header({ page }) {
       label: "Regalos corporativos",
       path: "regalos-corporativos/",
     },
+    {
+      id: "disenos-personalizados",
+      label: "Diseños personalizados",
+      path: "disenos-personalizados/",
+    },
     { id: "historia", label: "Nuestra historia", path: "historia/" },
     { id: "archivo", label: "El archivo", path: "archivo/" },
     { id: "contacto", label: "Contacto", path: "contacto/" },
@@ -52,6 +57,7 @@ export function Header({ page }) {
     history: "historia",
     archive: "archivo",
     corporate: "regalos-corporativos",
+    designs: "disenos-personalizados",
     collection: "coleccion",
     contact: "contacto",
   };

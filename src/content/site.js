@@ -247,36 +247,13 @@ export const corporateCatalog = {
   coverImage: "disenos/portada-modas-laura.png",
 };
 export const customDesigns = [
-  {
-    id: "img_20231220_172644358_ae",
-    image: "disenos/IMG_20231220_172644358_AE.webp",
-    title: "Diseño corporativo rectangular",
+  ...corporateCatalog.styles.slice(0, 3).map((style) => ({
+    id: style.id,
+    image: style.image,
+    title: style.alt,
     catalog: false,
-  },
-  {
-    id: "img_20231220_172719821_ae",
-    image: "disenos/IMG_20231220_172719821_AE.webp",
-    title: "Detalle del diseño corporativo",
-    catalog: false,
-  },
-  {
-    id: "img_20231220_173038529_hdr_ae",
-    image: "disenos/IMG_20231220_173038529_HDR_AE.webp",
-    title: "Diseño corporativo cuadrado",
-    catalog: false,
-  },
-  {
-    id: "img_20231220_173113297_hdr_ae",
-    image: "disenos/IMG_20231220_173113297_HDR_AE.webp",
-    title: "Tres tamaños personalizados",
-    catalog: false,
-  },
-  {
-    id: "img_20231220_175012437_ae",
-    image: "disenos/IMG_20231220_175012437_AE.webp",
-    title: "Detalle del estilo cuadrado",
-    catalog: false,
-  },
+    illustrative: true,
+  })),
   {
     id: "img_20240422_093353381_hdr_ae",
     image: "disenos/IMG_20240422_093353381_HDR_AE-sin-fondo.png",
