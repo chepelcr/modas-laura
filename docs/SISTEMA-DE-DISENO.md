@@ -37,3 +37,9 @@ El sello de origen divide «Una historia / desde» y «Our story / since» en do
 ## Archivo · Evolución del logo
 
 LogoTimeline presenta tres etapas en una lista ordenada: símbolo de las primeras etiquetas (reconstrucción digital identificada), sello circular conservado y logo familiar actual. Los registros viven en logoHistory dentro de src/content/site.js. No se atribuyen fechas no documentadas. La disposición tiene tres columnas en escritorio y una línea vertical en móvil; el logo actual usa la variante inversa en tema oscuro. El logo actual y el circular se muestran sin placas de fondo; el circular tiene transparencia exterior. El archivo muestra únicamente las fotografías restauradas. La sección tiene el ancla #logos y traducción al inglés.
+
+## Navegación y layout persistente
+
+App mantiene Header, Footer, preferencias y proveedores montados. Solo `.page-content` cambia de página. `usePageNavigation` mejora los enlaces internos conocidos con History API y obtiene la metadata del mismo documento prerenderizado que sirve las rutas directas. Las URLs físicas, recargas y navegación sin JavaScript siguen disponibles. Enlaces externos, descargas, modificadores del teclado y destinos nuevos conservan el comportamiento nativo; ante un fallo de lectura se usa navegación normal.
+
+La salida del contenido dura 140 ms y la entrada 260 ms, con desplazamientos verticales de 10/14 px y opacidad. Las duraciones y la curva se definen en tokens; movimiento reducido omite ambas animaciones. No se anima el encabezado ni el pie y se excluye el pie de las revelaciones al desplazar. Al navegar se actualizan idioma, metadata, estado activo y foco del título; Atrás/Adelante conserva posiciones de lectura. Nuevas navegaciones cancelan lecturas y animaciones anteriores.

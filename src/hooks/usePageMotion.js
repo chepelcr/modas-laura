@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function usePageMotion() {
+export function usePageMotion(routeKey) {
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     const elements = new Set();
@@ -43,7 +43,7 @@ export function usePageMotion() {
     }
     function discover() {
       const targets = document.querySelectorAll(
-        "[data-reveal], main .page-intro, main .closing, main .history-opening > *, main h1, main h2, main h3, main p, main figure, main article, main .eyebrow, main .brand-band, main .filters, main .hero-actions, main .back-link, .footer-top > *, .footer-bottom",
+        "main [data-reveal], main .page-intro, main .closing, main .history-opening > *, main h1, main h2, main h3, main p, main figure, main article, main .eyebrow, main .brand-band, main .filters, main .hero-actions, main .back-link",
       );
       targets.forEach((el) => {
         // Animate a content block once, rather than multiplying nested opacity.
@@ -83,5 +83,5 @@ export function usePageMotion() {
       });
       document.body.classList.remove("motion-ready");
     };
-  }, []);
+  }, [routeKey]);
 }

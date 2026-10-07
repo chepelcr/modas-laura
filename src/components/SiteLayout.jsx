@@ -36,7 +36,7 @@ export function Header({ page }) {
   const [open, setOpen] = useState(false);
   const menu = useRef(null),
     toggle = useRef(null);
-  const active = useActiveSection(open);
+  const active = useActiveSection(open, page);
   const navigation = [
     { id: "coleccion", label: "Colección", path: "coleccion/" },
     {
@@ -68,7 +68,7 @@ export function Header({ page }) {
       aria-current={
         pageIds[page] === item.id
           ? "page"
-          : active === item.id
+          : page === "home" && active === item.id
             ? "location"
             : undefined
       }

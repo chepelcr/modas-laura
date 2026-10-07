@@ -12,7 +12,7 @@ export function PreferenceControls() {
     update();
     addEventListener("hashchange", update);
     return () => removeEventListener("hashchange", update);
-  }, []);
+  }, [page, locale]);
   const nextLocale = locale === "es" ? "en" : "es";
   function rememberLanguage() {
     try {

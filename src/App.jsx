@@ -16,6 +16,7 @@ import {
 import { LocaleProvider, useLocale } from "./i18n/LocaleContext.jsx";
 import { ThemeProvider } from "./design-system/ThemeContext.jsx";
 import { usePageMotion } from "./hooks/usePageMotion.js";
+import { usePageNavigation } from "./hooks/usePageNavigation.js";
 function NotFound() {
   const { t, routeUrl } = useLocale();
   return (
@@ -29,9 +30,9 @@ function NotFound() {
     </Container>
   );
 }
-function AppContent({ page = "home" }) {
+function AppContent({ page = "home", routeKey, content }) {
   const { t } = useLocale();
-  usePageMotion();
+  usePageMotion(routeKey);
   const Page =
     {
       home: Home,
@@ -50,17 +51,20 @@ function AppContent({ page = "home" }) {
         {t("Saltar al contenido")}
       </a>
       <Header page={page} />
-      <Page />
+      <div className="page-content" ref={content}>
+        <Page key={routeKey} />
+      </div>
       <Footer />
     </>
   );
 }
 
 export function App({ page = "home", locale = "es" }) {
+  const { route, content } = usePageNavigation(page, locale);
   return (
-    <LocaleProvider locale={locale} page={page}>
+    <LocaleProvider locale={route.locale} page={route.page}>
       <ThemeProvider>
-        <AppContent page={page} />
+        <AppContent page={route.page} routeKey={route.key} content={content} />
       </ThemeProvider>
     </LocaleProvider>
   );

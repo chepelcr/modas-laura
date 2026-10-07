@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-export function useActiveSection(paused) {
+export function useActiveSection(paused, page) {
   const [active, setActive] = useState("");
   useEffect(() => {
     if (paused) return;
@@ -27,6 +27,6 @@ export function useActiveSection(paused) {
       removeEventListener("scroll", schedule);
       removeEventListener("resize", schedule);
     };
-  }, [paused]);
+  }, [paused, page]);
   return active;
 }
