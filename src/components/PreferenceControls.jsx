@@ -39,7 +39,9 @@ export function PreferenceControls() {
         )}
         onClick={rememberLanguage}
       >
-        <CountryFlag country={locale === "es" ? "cr" : "us"} />
+        <span data-locale-copy="">
+          <CountryFlag country={locale === "es" ? "cr" : "us"} />
+        </span>
       </a>
       <IconButton
         className="control-button theme-switch"

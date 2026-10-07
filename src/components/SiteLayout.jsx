@@ -74,7 +74,7 @@ export function Header({ page }) {
       }
       onClick={() => setOpen(false)}
     >
-      {t(item.label)}
+      <span data-locale-copy="">{t(item.label)}</span>
     </a>
   ));
   useEffect(() => {
@@ -110,7 +110,7 @@ export function Header({ page }) {
               target="_blank"
               rel="noopener"
             >
-              {t("Hablemos")} <Icon />
+              <span data-locale-copy="">{t("Hablemos")}</span> <Icon />
             </Button>
             <button
               type="button"
@@ -167,21 +167,24 @@ export function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <Brand />
-        <p>
+        <p data-locale-copy="">
           {t("Desde 1974, seguimos dando")}
           <br />
           {t("nuevas puntadas a nuestra historia.")}
         </p>
         <a href={asset("tarjeta-actual-85x55mm.pdf")} download>
-          {t("Tarjeta de presentación")} <Icon />
+          <span data-locale-copy="">{t("Tarjeta de presentación")}</span>{" "}
+          <Icon />
         </a>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Modas Laura · Costa Rica</span>
-        <span>
+        <span data-locale-copy="">
           {t("Un negocio familiar de")} {site.owner}.
         </span>
-        <a href={routeUrl("privacidad/")}>{t("Privacidad")}</a>
+        <a href={routeUrl("privacidad/")}>
+          <span data-locale-copy="">{t("Privacidad")}</span>
+        </a>
       </div>
     </footer>
   );

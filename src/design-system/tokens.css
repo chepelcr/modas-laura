@@ -1,8 +1,11 @@
 /* Primitive → semantic → component. The palette is the approved Modas Laura identity. */
 :root {
-  --duration-page-exit: 140ms;
-  --duration-page-enter: 260ms;
-  --ease-page: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-page-exit: 320ms;
+  --duration-page-enter: 560ms;
+  --duration-language-exit: 300ms;
+  --duration-language-enter: 520ms;
+  --duration-theme: 650ms;
+  --ease-page: cubic-bezier(0.4, 0, 0.2, 1);
   --palette-forest-700: #23564f;
   --palette-forest-900: #153f39;
   --palette-mint-200: #b7d8c5;

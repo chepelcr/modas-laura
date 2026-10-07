@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { pagePaths } from "../i18n/LocaleContext.jsx";
+import { durationInMilliseconds } from "../design-system/motion.js";
 
 const normalize = (path) => path.replace(/\/$/, "") || "/";
 const routes = new Map(
@@ -43,18 +44,30 @@ export function usePageNavigation(initialPage, initialLocale) {
       animations.forEach((animation) => animation.cancel());
       animations.clear();
     }
-    async function animate(frames, token, fallback) {
+    async function animate(
+      frames,
+      token,
+      fallback,
+      targets = [content.current],
+    ) {
       if (reduced.matches || !content.current.animate) return;
       const styles = getComputedStyle(content.current);
-      const animation = content.current.animate(frames, {
-        duration: parseFloat(styles.getPropertyValue(token)) || fallback,
-        easing: styles.getPropertyValue("--ease-page") || "ease-out",
-        fill: "both",
-      });
-      animations.add(animation);
-      await animation.finished.catch(() => {});
-      animations.delete(animation);
-      animation.cancel();
+      await Promise.all(
+        targets.map(async (target) => {
+          const animation = target.animate(frames, {
+            duration: durationInMilliseconds(
+              styles.getPropertyValue(token),
+              fallback,
+            ),
+            easing: styles.getPropertyValue("--ease-page") || "ease-in-out",
+            fill: "both",
+          });
+          animations.add(animation);
+          await animation.finished.catch(() => {});
+          animations.delete(animation);
+          animation.cancel();
+        }),
+      );
     }
     async function navigate(url, destination, pop = false, entry) {
       const request = ++sequence;
@@ -63,6 +76,14 @@ export function usePageNavigation(initialPage, initialLocale) {
       controller = new AbortController();
       const signal = controller.signal;
       const region = content.current;
+      const languageChange =
+        destination.locale !== document.body.dataset.locale &&
+        destination.page === document.body.dataset.page;
+      const readingPosition = { top: scrollY, left: scrollX };
+      const transitionTargets = languageChange
+        ? [region, ...document.querySelectorAll("[data-locale-copy]")]
+        : [region];
+      region.dataset.navigation = languageChange ? "language" : "page";
       region.setAttribute("aria-busy", "true");
       try {
         // Read the same prerendered document used by direct links and crawlers.
@@ -81,12 +102,15 @@ export function usePageNavigation(initialPage, initialLocale) {
 
         region.dataset.transition = "leaving";
         await animate(
-          [
-            { opacity: 1, transform: "translateY(0)" },
-            { opacity: 0, transform: "translateY(-10px)" },
-          ],
-          "--duration-page-exit",
-          140,
+          languageChange
+            ? [{ opacity: 1 }, { opacity: 0 }]
+            : [
+                { opacity: 1, transform: "translateY(0)" },
+                { opacity: 0, transform: "translateY(-20px)" },
+              ],
+          languageChange ? "--duration-language-exit" : "--duration-page-exit",
+          320,
+          transitionTargets,
         );
         if (request !== sequence) return;
 
@@ -111,7 +135,11 @@ export function usePageNavigation(initialPage, initialLocale) {
         document.body.dataset.locale = destination.locale;
         flushSync(() => setRoute({ ...destination, key: request }));
 
-        const position = pop ? positions.get(currentEntry) : null;
+        const position = pop
+          ? positions.get(currentEntry)
+          : languageChange
+            ? readingPosition
+            : null;
         const hashTarget = url.hash
           ? document.getElementById(decodeURIComponent(url.hash.slice(1)))
           : null;
@@ -126,12 +154,17 @@ export function usePageNavigation(initialPage, initialLocale) {
 
         region.dataset.transition = "entering";
         await animate(
-          [
-            { opacity: 0, transform: "translateY(14px)" },
-            { opacity: 1, transform: "translateY(0)" },
-          ],
-          "--duration-page-enter",
-          260,
+          languageChange
+            ? [{ opacity: 0 }, { opacity: 1 }]
+            : [
+                { opacity: 0, transform: "translateY(24px)" },
+                { opacity: 1, transform: "translateY(0)" },
+              ],
+          languageChange
+            ? "--duration-language-enter"
+            : "--duration-page-enter",
+          560,
+          transitionTargets,
         );
       } catch {
         // Preserve native navigation if a document cannot be fetched or parsed.
@@ -141,6 +174,7 @@ export function usePageNavigation(initialPage, initialLocale) {
         if (request === sequence) {
           region.removeAttribute("aria-busy");
           delete region.dataset.transition;
+          delete region.dataset.navigation;
         }
       }
     }

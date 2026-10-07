@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
+import { durationInMilliseconds } from "../src/design-system/motion.js";
 import {
   products,
   archiveEntries,
@@ -8,6 +9,14 @@ import {
   site,
   whatsapp,
 } from "../src/content/site.js";
+test("Motion durations accept seconds and milliseconds from computed CSS", () => {
+  assert.equal(durationInMilliseconds("320ms", 500), 320);
+  assert.equal(durationInMilliseconds(" 0.32s ", 500), 320);
+  assert.equal(durationInMilliseconds(".65s", 500), 650);
+  assert.equal(durationInMilliseconds("0ms", 500), 0);
+  assert.equal(durationInMilliseconds("", 500), 500);
+  assert.equal(durationInMilliseconds("invalid", 500), 500);
+});
 test("Current collection has exactly the three approved lines", () => {
   assert.deepEqual(
     products.map((item) => item.id),
@@ -43,7 +52,9 @@ test("Every production destination has unique metadata and canonical URL", () =>
   const titles = [];
   for (const route of routes) {
     const html = readFileSync(`${route}index.html`, "utf8");
-    assert(html.includes(`href="${site.canonical}${route.replace(/\/$/, "")}"`));
+    assert(
+      html.includes(`href="${site.canonical}${route.replace(/\/$/, "")}"`),
+    );
     titles.push(html.match(/<title>(.*?)<\/title>/)[1]);
   }
   assert.equal(new Set(titles).size, 4);
