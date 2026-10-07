@@ -53,6 +53,10 @@ export function CorporateGifts({ standalone = false }) {
               data-reveal=""
               key={style.id}
             >
+              <div className="corporate-style-heading">
+                <span className="eyebrow">{t(style.title)}</span>
+                <Heading as="h3">{t(style.name)}</Heading>
+              </div>
               <div className="corporate-photo">
                 <img
                   src={asset(style.image)}
@@ -62,8 +66,6 @@ export function CorporateGifts({ standalone = false }) {
                   loading="lazy"
                 />
               </div>
-              <span className="eyebrow">{t(style.title)}</span>
-              <Heading as="h3">{t(style.name)}</Heading>
               <p>
                 {t(style.size)}
                 <br />
@@ -106,15 +108,6 @@ export function CustomDesigns({ standalone = false }) {
         <div className="custom-design-grid">
           {customDesigns.map((design) => (
             <figure key={design.id}>
-              <a href={asset(design.image)} target="_blank" rel="noopener">
-                <img
-                  src={asset(design.image)}
-                  alt={t(design.title)}
-                  width="1200"
-                  height="900"
-                  loading="lazy"
-                />
-              </a>
               <figcaption>
                 {t(design.title)}
                 {design.backgroundRemoved && (
@@ -130,6 +123,15 @@ export function CustomDesigns({ standalone = false }) {
                   </>
                 )}
               </figcaption>
+              <a href={asset(design.image)} target="_blank" rel="noopener">
+                <img
+                  src={asset(design.image)}
+                  alt={t(design.alt || design.title)}
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                />
+              </a>
             </figure>
           ))}
         </div>

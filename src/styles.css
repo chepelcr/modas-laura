@@ -1955,6 +1955,10 @@ html[data-theme="dark"] .logo-history-image .brand-dark {
   font-size: 2rem;
   margin-block: var(--space-2);
 }
+.corporate-style-heading {
+  min-height: 7rem;
+  margin-bottom: var(--space-4);
+}
 .corporate-style p {
   color: var(--muted);
   font-size: var(--type-small);
@@ -1973,7 +1977,7 @@ html[data-theme="dark"] .logo-history-image .brand-dark {
   border-radius: var(--card-radius);
 }
 .custom-design-grid figcaption {
-  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
   color: var(--muted);
   font-size: var(--type-small);
 }
@@ -1986,6 +1990,9 @@ html[data-theme="dark"] .logo-history-image .brand-dark {
   }
 }
 @media (max-width: 800px) {
+  .corporate-style-heading {
+    min-height: 0;
+  }
   .corporate-styles,
   .custom-design-grid {
     grid-template-columns: 1fr;

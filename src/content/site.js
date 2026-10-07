@@ -255,7 +255,8 @@ export const customDesigns = [
   ...corporateCatalog.styles.slice(0, 3).map((style) => ({
     id: style.id,
     image: style.image,
-    title: style.alt,
+    title: style.name,
+    alt: style.alt,
     catalog: false,
     illustrative: true,
   })),
