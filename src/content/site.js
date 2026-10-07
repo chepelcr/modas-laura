@@ -226,7 +226,7 @@ export const corporateCatalog = {
     {
       id: "estilo-4",
       title: "Estilo 4",
-      name: "Almohada oscura",
+      name: "Almohada sublimada",
       size: "A4",
       measurementLabel: "Sublimado completo",
       description: "Almohada oscura con sublimado completo en formato A4.",
@@ -238,7 +238,7 @@ export const corporateCatalog = {
     {
       id: "estilo-5",
       title: "Estilo 5",
-      name: "Almohada con encaje",
+      name: "Almohada y Funda con encaje",
       size: "35 × 25 cm aprox.",
       measurementLabel: "Almohada y funda con encaje",
       description:
