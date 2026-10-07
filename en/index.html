@@ -9,7 +9,7 @@
       content="Pillows with pillowcases, simple pillows and large pillowcases. Discover the story of Modas Laura and ask us on WhatsApp."
     />
     <meta name="theme-color" content="#23564F" />
-    <link rel="canonical" href="https://modas-laura.jcampos.dev/en/" />
+    <link rel="canonical" href="https://modas-laura.jcampos.dev/en" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Modas Laura" />
@@ -21,7 +21,7 @@
       property="og:description"
       content="Pillows with pillowcases, simple pillows and large pillowcases. Discover the story of Modas Laura and ask us on WhatsApp."
     />
-    <meta property="og:url" content="https://modas-laura.jcampos.dev/en/" />
+    <meta property="og:url" content="https://modas-laura.jcampos.dev/en" />
     <meta
       property="og:image"
       content="https://modas-laura.jcampos.dev/assets/social-share.jpg"
@@ -53,7 +53,7 @@
     <link
       rel="alternate"
       hreflang="en"
-      href="https://modas-laura.jcampos.dev/en/"
+      href="https://modas-laura.jcampos.dev/en"
     />
     <link
       rel="alternate"
@@ -62,6 +62,13 @@
     />
     <script>
       (function () {
+        if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.slice(0, -1) + location.search + location.hash,
+          );
+        }
         try {
           var theme = localStorage.getItem("modas-laura-theme");
           if (theme !== "light" && theme !== "dark")

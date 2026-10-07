@@ -9,7 +9,7 @@
       content="Conocé la iniciativa de doña Vilma Corella Artavia y la trayectoria familiar de Modas Laura, activa desde 1974."
     />
     <meta name="theme-color" content="#23564F" />
-    <link rel="canonical" href="https://modas-laura.jcampos.dev/historia/" />
+    <link rel="canonical" href="https://modas-laura.jcampos.dev/historia" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CR" />
     <meta property="og:site_name" content="Modas Laura" />
@@ -20,7 +20,7 @@
     />
     <meta
       property="og:url"
-      content="https://modas-laura.jcampos.dev/historia/"
+      content="https://modas-laura.jcampos.dev/historia"
     />
     <meta
       property="og:image"
@@ -48,20 +48,27 @@
     <link
       rel="alternate"
       hreflang="es-CR"
-      href="https://modas-laura.jcampos.dev/historia/"
+      href="https://modas-laura.jcampos.dev/historia"
     />
     <link
       rel="alternate"
       hreflang="en"
-      href="https://modas-laura.jcampos.dev/en/history/"
+      href="https://modas-laura.jcampos.dev/en/history"
     />
     <link
       rel="alternate"
       hreflang="x-default"
-      href="https://modas-laura.jcampos.dev/historia/"
+      href="https://modas-laura.jcampos.dev/historia"
     />
     <script>
       (function () {
+        if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.slice(0, -1) + location.search + location.hash,
+          );
+        }
         try {
           var theme = localStorage.getItem("modas-laura-theme");
           if (theme !== "light" && theme !== "dark")

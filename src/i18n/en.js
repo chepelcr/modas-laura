@@ -1,4 +1,74 @@
 export const en = {
+  "Almohaditas personalizadas para regalos de empresa. Explorá cinco estilos y contanos qué diseño, cantidad y fecha tenés en mente.":
+    "Personalized pillows for corporate gifts. Explore five styles and tell us your design, quantity and date.",
+  "Estilo 4": "Style 4",
+  "Estilo 5": "Style 5",
+  "Sublimado completo": "Full sublimation",
+  "Almohada y funda con encaje": "Pillow and lace-trimmed cover",
+  "35 × 25 cm aprox.": "Approx. 35 × 25 cm",
+  "Almohada oscura con sublimado completo en formato A4.":
+    "Dark pillow with full sublimation in A4 format.",
+  "Sublimado central: 35 × 25 cm aprox. Sublimado completo: tamaño A4.":
+    "Central sublimation: approx. 35 × 25 cm. Full sublimation: A4 size.",
+  "Almohada oscura del estilo 4 con diseño de Interfaz, ejemplo de sublimado completo.":
+    "Style 4 dark pillow featuring an Interfaz design, an example of full sublimation.",
+  "Almohada y funda con encaje del estilo 5, con sublimado central de Interfaz.":
+    "Style 5 pillow and lace-trimmed cover featuring an Interfaz design in the center.",
+  "Estilos 1, 2 y 3: propuestas ilustrativas con nuestro logo, editadas con IA. Estilos 4 y 5: fotografías de trabajos realizados con el fondo eliminado con IA.":
+    "Styles 1, 2 and 3: illustrative mockups featuring our logo, edited with AI. Styles 4 and 5: photos of previous work with backgrounds removed using AI.",
+  "Propuesta ilustrativa del estilo 1, 18 × 14 cm, con el logo de Modas Laura.":
+    "Illustrative style 1 mockup, 18 × 14 cm, featuring the Modas Laura logo.",
+  "Propuesta ilustrativa del estilo 2, 22 × 20 cm, con el logo de Modas Laura.":
+    "Illustrative style 2 mockup, 22 × 20 cm, featuring the Modas Laura logo.",
+  "Propuesta ilustrativa del estilo 3, 28 × 28 cm, con el logo de Modas Laura.":
+    "Illustrative style 3 mockup, 28 × 28 cm, featuring the Modas Laura logo.",
+
+  "Fondo eliminado con IA.": "Background removed with AI.",
+  "Ver foto original": "View original photo",
+  "Fotografías de trabajos realizados, con marcas y nombres personalizados. Algunas imágenes tienen el fondo eliminado con IA y enlazan a su foto original. Las marcas pertenecen a sus respectivos titulares; estos ejemplos no implican una relación comercial actual.":
+    "Photos of previous work featuring personalized names and brands. Some backgrounds were removed with AI; links to the original photos are provided. Trademarks belong to their respective owners; these examples do not imply a current business relationship.",
+  "Ver diseños personalizados": "View personalized designs",
+  "Regalos corporativos": "Corporate gifts",
+  "Tu marca,": "Your brand,",
+  "en cada detalle.": "in every detail.",
+  "Almohaditas personalizadas para regalos de empresa. Explorá tres estilos y contanos qué diseño, cantidad y fecha tenés en mente.":
+    "Personalized pillows for corporate gifts. Explore three styles and tell us your design, quantity and date.",
+  "Consultar un regalo corporativo": "Ask about corporate gifts",
+  "Descargar catálogo (PDF, español)": "Download catalog (PDF, Spanish)",
+  "Tela tropical y espuma de uretano": "Tropical fabric and urethane foam",
+  "Ancho × alto": "Width × height",
+  "Consultá este estilo": "Ask about this style",
+  "Trabajos realizados": "Previous work",
+  "Diseños personalizados": "Personalized designs",
+  "Ver los nueve diseños": "View all nine designs",
+  "Fotografías originales de trabajos realizados, con marcas y nombres personalizados. Las marcas pertenecen a sus respectivos titulares; estos ejemplos no implican una relación comercial actual.":
+    "Original photos of previous work featuring personalized names and brands. Trademarks belong to their respective owners; these examples do not imply a current business relationship.",
+  "Confirmá diseño, materiales, cantidades, precios, disponibilidad y fecha antes de encargar.":
+    "Confirm the design, materials, quantities, pricing, availability and date before ordering.",
+  "Hola Modas Laura, quisiera consultar regalos corporativos personalizados.":
+    "Hello Modas Laura, I would like to ask about personalized corporate gifts.",
+  "Hola Modas Laura, quisiera consultar un regalo corporativo:":
+    "Hello Modas Laura, I would like to ask about a corporate gift:",
+  "Fotografía de un trabajo realizado.": "Photo of previous work.",
+  "Estilo 1": "Style 1",
+  "Estilo 2": "Style 2",
+  "Estilo 3": "Style 3",
+  "Almohadita personalizada del estilo 1, de 18 × 14 cm, con diseño corporativo.":
+    "Personalized style 1 pillow, 18 × 14 cm, featuring a corporate design.",
+  "Almohadita personalizada del estilo 2, de 22 × 20 cm, con diseño corporativo.":
+    "Personalized style 2 pillow, 22 × 20 cm, featuring a corporate design.",
+  "Almohadita personalizada del estilo 3, de 28 × 28 cm, con diseño corporativo.":
+    "Personalized style 3 pillow, 28 × 28 cm, featuring a corporate design.",
+  "Diseño corporativo rectangular": "Rectangular corporate design",
+  "Detalle del diseño corporativo": "Corporate design detail",
+  "Diseño corporativo cuadrado": "Square corporate design",
+  "Tres tamaños personalizados": "Three personalized sizes",
+  "Detalle del estilo cuadrado": "Square style detail",
+  "Almohaditas con identidad de marca": "Pillows with brand designs",
+  "Almohaditas con nombres": "Pillows with names",
+  "Diseño con nombre y encaje": "Name and lace design",
+  "Diseños con nombres y mariposas": "Names and butterflies",
+
   "La evolución de nuestra identidad": "The evolution of our identity",
   "Un bebé.": "One baby.",
   "Tres etapas de nuestra historia.": "Three chapters of our story.",

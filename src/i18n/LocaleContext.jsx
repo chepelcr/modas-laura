@@ -3,16 +3,24 @@ import { en } from "./en.js";
 export const pagePaths = {
   es: {
     home: "",
-    history: "historia/",
-    archive: "archivo/",
-    privacy: "privacidad/",
+    corporate: "regalos-corporativos",
+    designs: "disenos-personalizados",
+    collection: "coleccion",
+    contact: "contacto",
+    history: "historia",
+    archive: "archivo",
+    privacy: "privacidad",
     notfound: "404.html",
   },
   en: {
-    home: "en/",
-    history: "en/history/",
-    archive: "en/archive/",
-    privacy: "en/privacy/",
+    home: "en",
+    corporate: "en/corporate-gifts",
+    designs: "en/personalized-designs",
+    collection: "en/collection",
+    contact: "en/contact",
+    history: "en/history",
+    archive: "en/archive",
+    privacy: "en/privacy",
     notfound: "en/404.html",
   },
 };
@@ -29,6 +37,10 @@ export function LocaleProvider({ locale = "es", page = "home", children }) {
     const [route, hash] = path.split("#");
     const pageId = {
       historia: "history",
+      "regalos-corporativos": "corporate",
+      "disenos-personalizados": "designs",
+      coleccion: "collection",
+      contacto: "contact",
       archivo: "archive",
       privacidad: "privacy",
       "": "home",
@@ -36,7 +48,7 @@ export function LocaleProvider({ locale = "es", page = "home", children }) {
     const destination = pageId
       ? pagePaths[locale][pageId]
       : `${locale === "en" ? "en/" : ""}${route}`;
-    return `/${destination}${hash !== undefined ? "#" + hash : ""}`;
+    return `/${destination.replace(/\/$/, "")}${hash !== undefined ? "#" + hash : ""}`;
   };
   return (
     <LocaleContext.Provider value={{ locale, page, t, routeUrl }}>

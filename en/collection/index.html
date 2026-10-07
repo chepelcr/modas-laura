@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Our collection · Modas Laura</title>
+    <meta
+      name="description"
+      content="Explore the three pillow and pillowcase lines from Modas Laura."
+    />
+    <meta name="theme-color" content="#23564F" />
+    <link
+      rel="canonical"
+      href="https://modas-laura.jcampos.dev/en/collection"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Modas Laura" />
+    <meta property="og:title" content="Our collection · Modas Laura" />
+    <meta
+      property="og:description"
+      content="Explore the three pillow and pillowcase lines from Modas Laura."
+    />
+    <meta
+      property="og:url"
+      content="https://modas-laura.jcampos.dev/en/collection"
+    />
+    <meta
+      property="og:image"
+      content="https://modas-laura.jcampos.dev/assets/social-share.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Modas Laura",
+        "url": "https://modas-laura.jcampos.dev/",
+        "logo": "https://modas-laura.jcampos.dev/assets/logo.webp",
+        "foundingDate": "1974",
+        "email": "vilmacorella@yahoo.com",
+        "telephone": "+50689890512",
+        "description": "A Costa Rican family business making pillows and pillowcases, active since 1974."
+      }
+    </script>
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://modas-laura.jcampos.dev/coleccion"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://modas-laura.jcampos.dev/en/collection"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://modas-laura.jcampos.dev/coleccion"
+    />
+    <script>
+      (function () {
+        if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.slice(0, -1) + location.search + location.hash,
+          );
+        }
+        try {
+          var theme = localStorage.getItem("modas-laura-theme");
+          if (theme !== "light" && theme !== "dark")
+            theme = matchMedia("(prefers-color-scheme:dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.dataset.theme = theme;
+          if (
+            location.pathname === "/" &&
+            localStorage.getItem("modas-laura-language") === "en"
+          )
+            location.replace("/en/" + location.hash);
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+  <body data-page="collection" data-locale="en">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -11,7 +11,7 @@ import {
 } from "../design-system/Primitives.jsx";
 import { consultationSteps, whatsapp } from "../content/site.js";
 export function ConsultationSteps() {
-  const { t } = useLocale();
+  const { t, routeUrl } = useLocale();
   const [index, setIndex] = useState(0);
   const content = useRef(null),
     previous = useRef(null),
@@ -19,7 +19,7 @@ export function ConsultationSteps() {
   const step = consultationSteps[index];
   const href = step.href.startsWith("https:")
     ? whatsapp(t(new URL(step.href).searchParams.get("text")))
-    : step.href;
+    : routeUrl(step.href);
   function change(direction) {
     const newIndex = Math.max(
       0,

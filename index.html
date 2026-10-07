@@ -53,7 +53,7 @@
     <link
       rel="alternate"
       hreflang="en"
-      href="https://modas-laura.jcampos.dev/en/"
+      href="https://modas-laura.jcampos.dev/en"
     />
     <link
       rel="alternate"
@@ -62,6 +62,13 @@
     />
     <script>
       (function () {
+        if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.slice(0, -1) + location.search + location.hash,
+          );
+        }
         try {
           var theme = localStorage.getItem("modas-laura-theme");
           if (theme !== "light" && theme !== "dark")

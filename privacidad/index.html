@@ -9,7 +9,7 @@
       content="Información sobre privacidad y los enlaces de contacto del sitio de Modas Laura."
     />
     <meta name="theme-color" content="#23564F" />
-    <link rel="canonical" href="https://modas-laura.jcampos.dev/privacidad/" />
+    <link rel="canonical" href="https://modas-laura.jcampos.dev/privacidad" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CR" />
     <meta property="og:site_name" content="Modas Laura" />
@@ -20,7 +20,7 @@
     />
     <meta
       property="og:url"
-      content="https://modas-laura.jcampos.dev/privacidad/"
+      content="https://modas-laura.jcampos.dev/privacidad"
     />
     <meta
       property="og:image"
@@ -48,20 +48,27 @@
     <link
       rel="alternate"
       hreflang="es-CR"
-      href="https://modas-laura.jcampos.dev/privacidad/"
+      href="https://modas-laura.jcampos.dev/privacidad"
     />
     <link
       rel="alternate"
       hreflang="en"
-      href="https://modas-laura.jcampos.dev/en/privacy/"
+      href="https://modas-laura.jcampos.dev/en/privacy"
     />
     <link
       rel="alternate"
       hreflang="x-default"
-      href="https://modas-laura.jcampos.dev/privacidad/"
+      href="https://modas-laura.jcampos.dev/privacidad"
     />
     <script>
       (function () {
+        if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.slice(0, -1) + location.search + location.hash,
+          );
+        }
         try {
           var theme = localStorage.getItem("modas-laura-theme");
           if (theme !== "light" && theme !== "dark")

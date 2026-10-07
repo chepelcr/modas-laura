@@ -1,3 +1,7 @@
+import Corporate from "./pages/Corporate.jsx";
+import Designs from "./pages/Designs.jsx";
+import Collection from "./pages/Collection.jsx";
+import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
 import History from "./pages/History.jsx";
 import Archive from "./pages/Archive.jsx";
@@ -31,6 +35,10 @@ function AppContent({ page = "home" }) {
   const Page =
     {
       home: Home,
+      corporate: Corporate,
+      designs: Designs,
+      collection: Collection,
+      contact: Contact,
       history: History,
       archive: Archive,
       privacy: Privacy,

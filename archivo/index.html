@@ -9,7 +9,7 @@
       content="Fotografías históricas de los productos y el taller de Modas Laura. Explorá el archivo restaurado y compará las imágenes originales."
     />
     <meta name="theme-color" content="#23564F" />
-    <link rel="canonical" href="https://modas-laura.jcampos.dev/archivo/" />
+    <link rel="canonical" href="https://modas-laura.jcampos.dev/archivo" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CR" />
     <meta property="og:site_name" content="Modas Laura" />
@@ -18,10 +18,7 @@
       property="og:description"
       content="Fotografías históricas de los productos y el taller de Modas Laura. Explorá el archivo restaurado y compará las imágenes originales."
     />
-    <meta
-      property="og:url"
-      content="https://modas-laura.jcampos.dev/archivo/"
-    />
+    <meta property="og:url" content="https://modas-laura.jcampos.dev/archivo" />
     <meta
       property="og:image"
       content="https://modas-laura.jcampos.dev/assets/social-share.jpg"
@@ -48,20 +45,27 @@
     <link
       rel="alternate"
       hreflang="es-CR"
-      href="https://modas-laura.jcampos.dev/archivo/"
+      href="https://modas-laura.jcampos.dev/archivo"
     />
     <link
       rel="alternate"
       hreflang="en"
-      href="https://modas-laura.jcampos.dev/en/archive/"
+      href="https://modas-laura.jcampos.dev/en/archive"
     />
     <link
       rel="alternate"
       hreflang="x-default"
-      href="https://modas-laura.jcampos.dev/archivo/"
+      href="https://modas-laura.jcampos.dev/archivo"
     />
     <script>
       (function () {
+        if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+          history.replaceState(
+            null,
+            "",
+            location.pathname.slice(0, -1) + location.search + location.hash,
+          );
+        }
         try {
           var theme = localStorage.getItem("modas-laura-theme");
           if (theme !== "light" && theme !== "dark")

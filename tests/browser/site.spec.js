@@ -20,7 +20,7 @@ test("React hydrates without errors; all direct routes and metadata work", async
     await expect(page.locator("h1")).toHaveCount(1);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
-      `https://modas-laura.jcampos.dev/${path}`,
+      `https://modas-laura.jcampos.dev/${path.replace(/\/$/, "")}`,
     );
     await page.reload();
     await expect(page.locator("main")).toBeVisible();
@@ -232,7 +232,7 @@ test("Language keeps the current page and theme persists across navigation", asy
   await page.getByRole("button", { name: "Activar tema oscuro" }).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await page.getByRole("link", { name: "Cambiar a inglés" }).click();
-  await expect(page).toHaveURL(/\/en\/history\/$/);
+  await expect(page).toHaveURL(/\/en\/history$/);
   await expect(page.locator(".language-switch .country-flag path")).toHaveCount(
     51,
   );
@@ -316,10 +316,17 @@ test("Archive collection action opens the home collection in the selected langua
     ["en/history/", "/en/"],
   ]) {
     await page.goto(archive);
-    const action = page.locator('.closing a.button[href$="#coleccion"]');
-    await expect(action).toHaveAttribute("href", `${home}#coleccion`);
+    const action = page.locator(
+      '.closing a.button[href$="collection"], .closing a.button[href$="coleccion"]',
+    );
+    await expect(action).toHaveAttribute(
+      "href",
+      `${home}${home === "/" ? "coleccion" : "collection"}`,
+    );
     await action.click();
-    await expect(page).toHaveURL(`http://127.0.0.1:4173${home}#coleccion`);
+    await expect(page).toHaveURL(
+      `http://127.0.0.1:4173${home}${home === "/" ? "coleccion" : "collection"}`,
+    );
     await expect(page.locator("#coleccion")).toBeInViewport();
   }
 });

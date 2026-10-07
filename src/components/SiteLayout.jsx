@@ -38,12 +38,23 @@ export function Header({ page }) {
     toggle = useRef(null);
   const active = useActiveSection(open);
   const navigation = [
-    { id: "coleccion", label: "Colección", path: "#coleccion" },
+    { id: "coleccion", label: "Colección", path: "coleccion/" },
+    {
+      id: "regalos-corporativos",
+      label: "Regalos corporativos",
+      path: "regalos-corporativos/",
+    },
     { id: "historia", label: "Nuestra historia", path: "historia/" },
     { id: "archivo", label: "El archivo", path: "archivo/" },
-    { id: "contacto", label: "Contacto", path: "#contacto" },
+    { id: "contacto", label: "Contacto", path: "contacto/" },
   ];
-  const pageIds = { history: "historia", archive: "archivo" };
+  const pageIds = {
+    history: "historia",
+    archive: "archivo",
+    corporate: "regalos-corporativos",
+    collection: "coleccion",
+    contact: "contacto",
+  };
   const links = navigation.map((item) => (
     <a
       key={item.id}

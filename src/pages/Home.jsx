@@ -1,7 +1,8 @@
 import { Button, Heading, Icon } from "../design-system/Primitives.jsx";
-import { asset, site, whatsapp } from "../content/site.js";
+import { asset } from "../content/site.js";
 import { useLocale } from "../i18n/LocaleContext.jsx";
-import { ProductGrid } from "../components/ProductCard.jsx";
+import { CollectionSection } from "./Collection.jsx";
+import { ContactSection } from "./Contact.jsx";
 import { ConsultationSteps } from "../components/ConsultationSteps.jsx";
 import { PortraitLabel } from "../components/PortraitLabel.jsx";
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
             )}
           </p>
           <div className="hero-actions">
-            <Button href="#coleccion" variant="primary">
+            <Button href={routeUrl("coleccion/")} variant="primary">
               {t("Descubrí la colección ")}
               <Icon name="arrow" />
             </Button>
@@ -81,31 +82,7 @@ export default function Home() {
         </span>
         <span>{t("Desde 1974")}</span>
       </div>
-      <section id="coleccion" className="collection section">
-        <div className="wrap">
-          <div className="section-heading split">
-            <div>
-              <span className="eyebrow">{t("Nuestra colección actual")}</span>
-              <Heading as="h2">
-                {t("Tres líneas para")}
-                <br />
-                <em>{t("seguir nuestra historia.")}</em>
-              </Heading>
-            </div>
-            <p>
-              {t("Almohadas y fundas, con opciones")}
-              <br />
-              {t("para bebé y para el hogar.")}
-            </p>
-          </div>
-          <ProductGrid />
-          <p className="caption">
-            {t(
-              "Las fotografías muestran ejemplos de nuestras líneas. Confirmá modelos, medidas, composición, precios y disponibilidad antes de comprar.",
-            )}
-          </p>
-        </div>
-      </section>
+      <CollectionSection />
       <section className="story-preview section">
         <div className="wrap story-grid">
           <figure className="portrait reveal" data-reveal="">
@@ -167,10 +144,7 @@ export default function Home() {
             </Button>
           </div>
           <div className="archive-strip">
-            <a
-              href={routeUrl("archivo/#cogeollas")}
-              className="archive-teaser reveal"
-            >
+            <a href={routeUrl("archivo/")} className="archive-teaser reveal">
               <img
                 src={asset("archivo-cogeollas.webp")}
                 width="1600"
@@ -183,10 +157,7 @@ export default function Home() {
                 <small>{t("Cogeollas")}</small>
               </span>
             </a>
-            <a
-              href={routeUrl("archivo/#sabana")}
-              className="archive-teaser reveal"
-            >
+            <a href={routeUrl("archivo/")} className="archive-teaser reveal">
               <img
                 src={asset("archivo-sabana.webp")}
                 width="1600"
@@ -201,10 +172,7 @@ export default function Home() {
                 <small>{t("Sábanas de cuna")}</small>
               </span>
             </a>
-            <a
-              href={routeUrl("archivo/#almohada-infantil")}
-              className="archive-teaser reveal"
-            >
+            <a href={routeUrl("archivo/")} className="archive-teaser reveal">
               <img
                 src={asset("archivo-almohada-infantil.webp")}
                 width="1600"
@@ -227,55 +195,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="contacto" className="contact section">
-        <div className="wrap contact-grid">
-          <div>
-            <span className="eyebrow">{t("Sigamos en contacto")}</span>
-            <Heading as="h2">
-              {t("El siguiente detalle")}
-              <br />
-              {t("lo elegimos con vos.")}
-            </Heading>
-            <p>
-              {t(
-                "Contanos qué estás buscando. Te ayudamos a consultar modelos, colores, precios y disponibilidad.",
-              )}
-            </p>
-            <Button
-              href={whatsapp(
-                t("Hola Modas Laura, quisiera consultar sus productos."),
-              )}
-              target="_blank"
-              rel="noopener"
-              variant="light"
-            >
-              <Icon name="message" />
-              {t(" Escribinos por WhatsApp ")}
-              <Icon name="arrow" />
-            </Button>
-          </div>
-          <div className="contact-info">
-            <span className="eyebrow">{t("Modas Laura")}</span>
-            <a href={`tel:${site.phoneInternational}`} className="phone">
-              <span className="country-code">+506</span>
-              <span>{site.phone}</span>
-            </a>
-            <a href="mailto:vilmacorella@yahoo.com" className="email">
-              {t("vilmacorella@yahoo.com")}
-            </a>
-            <span>{t("Costa Rica")}</span>
-            <Button
-              href={asset("modas-laura.vcf")}
-              download={true}
-              variant="text"
-              className="pale"
-            >
-              {t("Guardar contacto ")}
-              <Icon name="arrow" />
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </main>
   );
 }

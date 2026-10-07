@@ -43,7 +43,7 @@ test("Every production destination has unique metadata and canonical URL", () =>
   const titles = [];
   for (const route of routes) {
     const html = readFileSync(`${route}index.html`, "utf8");
-    assert(html.includes(`href="${site.canonical}${route}"`));
+    assert(html.includes(`href="${site.canonical}${route.replace(/\/$/, "")}"`));
     titles.push(html.match(/<title>(.*?)<\/title>/)[1]);
   }
   assert.equal(new Set(titles).size, 4);
