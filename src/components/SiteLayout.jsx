@@ -155,7 +155,7 @@ export function Footer() {
           <br />
           {t("nuevas puntadas a nuestra historia.")}
         </p>
-        <a href={asset("tarjeta-85x55mm.pdf")} download>
+        <a href={asset("tarjeta-actual-85x55mm.pdf")} download>
           {t("Tarjeta de presentación")} <Icon />
         </a>
       </div>

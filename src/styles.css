@@ -803,6 +803,10 @@ summary:focus-visible {
   margin-bottom: 3px;
 }
 .phone {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  white-space: nowrap;
   font-family: var(--serif);
   font-size: 46px;
   line-height: 1.2;
@@ -1906,4 +1910,15 @@ html[data-theme="dark"] .logo-history-image .brand-light {
 }
 html[data-theme="dark"] .logo-history-image .brand-dark {
   display: block;
+}
+
+.phone .country-code {
+  font-family: var(--sans);
+  font-size: 0.5em;
+  letter-spacing: 0;
+}
+@media (max-width: 400px) {
+  .contact-info .phone {
+    font-size: 40px;
+  }
 }

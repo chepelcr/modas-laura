@@ -1,5 +1,5 @@
 import { Button, Heading, Icon } from "../design-system/Primitives.jsx";
-import { asset, whatsapp } from "../content/site.js";
+import { asset, site, whatsapp } from "../content/site.js";
 import { useLocale } from "../i18n/LocaleContext.jsx";
 import { ProductGrid } from "../components/ProductCard.jsx";
 import { ConsultationSteps } from "../components/ConsultationSteps.jsx";
@@ -256,13 +256,14 @@ export default function Home() {
           </div>
           <div className="contact-info">
             <span className="eyebrow">{t("Modas Laura")}</span>
-            <a href="tel:+50689890512" className="phone">
-              {t("8989-0512")}
+            <a href={`tel:${site.phoneInternational}`} className="phone">
+              <span className="country-code">+506</span>
+              <span>{site.phone}</span>
             </a>
             <a href="mailto:vilmacorella@yahoo.com" className="email">
               {t("vilmacorella@yahoo.com")}
             </a>
-            <span>{t("Costa Rica · +506")}</span>
+            <span>{t("Costa Rica")}</span>
             <Button
               href={asset("modas-laura.vcf")}
               download={true}

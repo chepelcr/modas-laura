@@ -356,3 +356,44 @@ test("Content vanishes outside the reading area and returns on every page", asyn
     );
   }
 });
+
+test("Contact keeps the country code beside the number and serves the updated card", async ({
+  page,
+}) => {
+  for (const path of ["./", "en/"]) {
+    for (const width of [320, 375, 768, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(path);
+      const phone = page.locator(".contact-info .phone");
+      await expect(phone).toHaveAttribute("href", "tel:+50689890512");
+      await expect(phone).toHaveText("+5068989-0512");
+      const aligned = await phone.evaluate((el) => {
+        const [code, number] = [...el.children].map((s) =>
+          s.getBoundingClientRect(),
+        );
+        return (
+          code.right <= number.left &&
+          code.bottom > number.top &&
+          code.top < number.bottom
+        );
+      });
+      expect(aligned).toBe(true);
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+    }
+  }
+  const card = page.locator("footer a[download]");
+  await expect(card).toHaveAttribute(
+    "href",
+    "/assets/tarjeta-actual-85x55mm.pdf",
+  );
+  const response = await page.request.get(await card.getAttribute("href"));
+  expect(response.ok()).toBe(true);
+  expect((await response.body()).subarray(0, 5).toString()).toBe("%PDF-");
+  const contact = await page.request.get("/assets/modas-laura.vcf");
+  expect(await contact.text()).toContain("TEL;TYPE=CELL:+50689890512\r\n");
+  expect(await contact.text()).not.toContain("\\r\\n");
+});
