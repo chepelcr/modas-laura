@@ -790,6 +790,7 @@ summary:focus-visible {
   gap: 100px;
   align-items: center;
 }
+.contact h1,
 .contact h2,
 .contact .eyebrow {
   color: var(--on-brand);
@@ -1429,6 +1430,7 @@ details img {
   .archive-teaser small {
     align-self: center;
   }
+  .contact h1,
   .contact h2 {
     font-size: 39px;
   }
@@ -1666,6 +1668,7 @@ details img {
   background: var(--color-inverse-background);
   color: var(--color-inverse-text);
 }
+.contact h1,
 .contact h2,
 .contact .eyebrow {
   color: var(--color-inverse-text);
