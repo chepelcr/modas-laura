@@ -111,7 +111,7 @@ export default function Home() {
             </Heading>
             <p>
               {t(
-                "Al ver unos vestidos en un Más por Menos, doña Vilma se animó a preparar sus propias muestras. Lo que imaginaba como un pedido para una tienda terminó llegando a los Más por Menos de todo el país.",
+                "Al ver unos vestidos en un Mas X Menos, doña Vilma se animó a preparar sus propias muestras. Lo que imaginaba como un pedido para una tienda terminó llegando a los Mas X Menos de todo el país.",
               )}
             </p>
             <p>

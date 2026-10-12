@@ -43,12 +43,12 @@ export default function History() {
           </Heading>
           <p>
             {t(
-              "Al pasar frente a un Más por Menos y ver unos vestidos, doña Vilma pensó que podía mejorar su confección. Decidió preparar sus propias muestras y presentarlas a Corporación de Supermercados Unidos, conocida entonces como CSU.",
+              "Al pasar frente a un Mas X Menos y ver unos vestidos, doña Vilma pensó que podía mejorar su confección. Decidió preparar sus propias muestras y presentarlas a Corporación de Supermercados Unidos, conocida entonces como CSU.",
             )}
           </p>
           <p>
             {t(
-              "Imaginaba que le pedirían vestidos para el local de Cuesta de Moras. La sorpresa fue descubrir que el pedido sería para los Más por Menos de todo el país. Aquella iniciativa abrió una oportunidad mucho mayor de la que había imaginado.",
+              "Imaginaba que le pedirían vestidos para el local de Cuesta de Moras. La sorpresa fue descubrir que el pedido sería para los Mas X Menos de todo el país. Aquella iniciativa abrió una oportunidad mucho mayor de la que había imaginado.",
             )}
           </p>
           <p className="caption">

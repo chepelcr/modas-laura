@@ -142,8 +142,8 @@ export const en = {
   "Nuestra historia": "Our story",
   "Todo empezó con": "It all started with",
   "una idea de doña Vilma.": "an idea from Vilma.",
-  "Al ver unos vestidos en un Más por Menos, doña Vilma se animó a preparar sus propias muestras. Lo que imaginaba como un pedido para una tienda terminó llegando a los Más por Menos de todo el país.":
-    "After seeing some dresses at a Más por Menos supermarket, Vilma decided to make her own samples. What she imagined as an order for one store ended up reaching Más por Menos stores across Costa Rica.",
+  "Al ver unos vestidos en un Mas X Menos, doña Vilma se animó a preparar sus propias muestras. Lo que imaginaba como un pedido para una tienda terminó llegando a los Mas X Menos de todo el país.":
+    "After seeing some dresses at a Mas X Menos supermarket, Vilma decided to make her own samples. What she imagined as an order for one store ended up reaching Mas X Menos stores across Costa Rica.",
   "Desde 1974, su iniciativa sigue dando forma a Modas Laura: una historia familiar que hoy da una nueva puntada hacia el mundo digital.":
     "Since 1974, her initiative has continued to shape Modas Laura: a family story now taking its next stitch into the digital world.",
   "Leé la historia completa": "Read the full story",
@@ -183,10 +183,10 @@ export const en = {
   "El primer paso": "The first step",
   "De unas muestras": "From a few samples",
   "a todo el país.": "to stores nationwide.",
-  "Al pasar frente a un Más por Menos y ver unos vestidos, doña Vilma pensó que podía mejorar su confección. Decidió preparar sus propias muestras y presentarlas a Corporación de Supermercados Unidos, conocida entonces como CSU.":
-    "While passing a Más por Menos supermarket and looking at some dresses, Vilma thought she could improve the way they were made. She prepared her own samples and presented them to Corporación de Supermercados Unidos, then known as CSU.",
-  "Imaginaba que le pedirían vestidos para el local de Cuesta de Moras. La sorpresa fue descubrir que el pedido sería para los Más por Menos de todo el país. Aquella iniciativa abrió una oportunidad mucho mayor de la que había imaginado.":
-    "She expected an order for the Cuesta de Moras store. To her surprise, the dresses were requested for Más por Menos stores throughout the country. Her initiative opened a much bigger opportunity than she had imagined.",
+  "Al pasar frente a un Mas X Menos y ver unos vestidos, doña Vilma pensó que podía mejorar su confección. Decidió preparar sus propias muestras y presentarlas a Corporación de Supermercados Unidos, conocida entonces como CSU.":
+    "While passing a Mas X Menos supermarket and looking at some dresses, Vilma thought she could improve the way they were made. She prepared her own samples and presented them to Corporación de Supermercados Unidos, then known as CSU.",
+  "Imaginaba que le pedirían vestidos para el local de Cuesta de Moras. La sorpresa fue descubrir que el pedido sería para los Mas X Menos de todo el país. Aquella iniciativa abrió una oportunidad mucho mayor de la que había imaginado.":
+    "She expected an order for the Cuesta de Moras store. To her surprise, the dresses were requested for Mas X Menos stores throughout the country. Her initiative opened a much bigger opportunity than she had imagined.",
   "Este relato forma parte de nuestra historia de origen.":
     "This account is part of our origin story.",
   "Una historia que se transforma": "A story that keeps evolving",
