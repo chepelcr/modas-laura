@@ -1,26 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "node:path";
-const pages = [
-  "en/contact/index.html",
-  "contacto/index.html",
-  "en/collection/index.html",
-  "coleccion/index.html",
-  "en/personalized-designs/index.html",
-  "disenos-personalizados/index.html",
-  "en/corporate-gifts/index.html",
-  "regalos-corporativos/index.html",
-  "index.html",
-  "historia/index.html",
-  "archivo/index.html",
-  "privacidad/index.html",
-  "404.html",
-  "en/index.html",
-  "en/history/index.html",
-  "en/archive/index.html",
-  "en/privacy/index.html",
-  "en/404.html",
-];
+import { pageEntries } from "./src/i18n/routes.js";
+const pages = Object.keys(pageEntries);
 export default defineConfig(({ isSsrBuild }) => ({
   base: "/",
   plugins: [

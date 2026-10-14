@@ -1,29 +1,7 @@
 import { createContext, useContext } from "react";
 import { en } from "./en.js";
-export const pagePaths = {
-  es: {
-    home: "",
-    corporate: "regalos-corporativos",
-    designs: "disenos-personalizados",
-    collection: "coleccion",
-    contact: "contacto",
-    history: "historia",
-    archive: "archivo",
-    privacy: "privacidad",
-    notfound: "404.html",
-  },
-  en: {
-    home: "en",
-    corporate: "en/corporate-gifts",
-    designs: "en/personalized-designs",
-    collection: "en/collection",
-    contact: "en/contact",
-    history: "en/history",
-    archive: "en/archive",
-    privacy: "en/privacy",
-    notfound: "en/404.html",
-  },
-};
+import { pagePaths } from "./routes.js";
+export { pagePaths } from "./routes.js";
 export function translate(text, locale = "es") {
   if (locale === "es" || typeof text !== "string") return text;
   const key = text.trim();

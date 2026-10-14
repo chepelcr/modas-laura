@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { pagePaths } from "../i18n/LocaleContext.jsx";
+import { ROUTE_EVENT } from "../analytics.js";
 import { durationInMilliseconds } from "../design-system/motion.js";
 
 const normalize = (path) => path.replace(/\/$/, "") || "/";
@@ -152,6 +153,8 @@ export function usePageNavigation(initialPage, initialLocale) {
           heading?.focus({ preventScroll: true });
         }
 
+        // Emit only after the route, language and reading position are committed.
+        window.dispatchEvent(new Event(ROUTE_EVENT));
         region.dataset.transition = "entering";
         await animate(
           languageChange

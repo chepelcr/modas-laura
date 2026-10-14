@@ -228,8 +228,17 @@ export const en = {
   "Información del sitio": "Site information",
   "Tu privacidad.": "Your privacy.",
   "Una visita sencilla": "A simple visit",
-  "Este sitio no incorpora formularios, cuentas, cookies propias ni herramientas de seguimiento publicitario o analítica. Se aloja en GitHub Pages; el proveedor puede procesar información técnica de la visita conforme a sus políticas.":
-    "This site has no forms, accounts, first-party cookies, advertising trackers or analytics tools. It is hosted on GitHub Pages; the provider may process technical information about your visit under its policies.",
+  "Este sitio no incorpora formularios, cuentas, cookies propias ni seguimiento publicitario. Se aloja en GitHub Pages; el proveedor puede procesar información técnica de la visita conforme a sus políticas.":
+    "This site has no forms, accounts, first-party cookies or advertising trackers. It is hosted on GitHub Pages; the provider may process technical information about your visit under its policies.",
+  "Cómo entendemos las visitas": "How we understand visits",
+  "Usamos analítica propia y anónima para contar las páginas visitadas y acciones como abrir WhatsApp, llamar, enviar correo, descargar archivos o cambiar idioma y apariencia. Registramos rutas sin parámetros, el tipo general de dispositivo y solo el dominio de referencia.":
+    "We use anonymous first-party analytics to count page visits and actions such as opening WhatsApp, calling, emailing, downloading files or changing language and appearance. We record paths without parameters, general device categories and only the referring hostname.",
+  "Cada pestaña recibe un identificador aleatorio guardado en su almacenamiento temporal durante la sesión. Estimamos los visitantes a partir de esas sesiones: una misma persona puede generar varias. No enviamos nombres, teléfonos, correos, contenido de consultas ni valores de formularios. Las métricas se consultan en un panel privado.":
+    "Each tab receives a random identifier kept in its temporary storage for the session. We estimate visitors from these sessions: one person may generate several. We do not send names, phone numbers, email addresses, inquiry contents or form values. Metrics are viewed in a private dashboard.",
+  "Esta medición no utiliza cookies ni herramientas de publicidad. Respetamos las señales Do Not Track y Global Privacy Control del navegador.":
+    "This measurement uses no cookies or advertising tools. We respect the browser’s Do Not Track and Global Privacy Control signals.",
+  "Los eventos anónimos se conservan aproximadamente 90 días en infraestructura de Amazon Web Services (AWS), en Estados Unidos. En esos eventos no guardamos la dirección IP ni la cadena de identificación del navegador. Los proveedores de infraestructura pueden procesar información técnica conforme a sus políticas.":
+    "Anonymous events are retained for approximately 90 days on Amazon Web Services (AWS) infrastructure in the United States. We do not store IP addresses or browser user-agent strings in these events. Infrastructure providers may process technical information under their policies.",
   "Cuando nos contactás": "When you contact us",
   "Los enlaces de WhatsApp, teléfono y correo abren servicios externos. Si elegís escribirnos, compartís con nosotros la información que incluyás en tu mensaje para atender tu consulta. Las condiciones de esos servicios se aplican al usarlos.":
     "WhatsApp, phone and email links open external services. If you choose to write to us, you share the information in your message so we can respond to your inquiry. Those services’ terms apply when you use them.",
